@@ -11,14 +11,10 @@ O objetivo inicial é cumprir esta ementa:
 
 * Herança de templates
 
-* I/O: Ler txt
-* I/O: Escrever txt
-* I/O: Ler csv
-* I/O: Escrever csv
-* I/O: Ler xml
-* I/O: Escrever xml
-* I/O: Ler JSON
-* I/O: Escrever JSON
+* I/O: Ler/Escrever txt
+* I/O: Ler/Escrever csv
+* I/O: Ler/Escrever xml
+* I/O: Ler/Escrever JSON
 
 * Entendendo os modelos do Django: One to One, One to Many, Many to Many, Abstract Model, Multi table inheritance, Proxy models
 
