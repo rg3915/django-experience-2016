@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'widget_tweaks',
     'daterange_filter',
+    'django_activeurl',
 ]
 
 MIDDLEWARE_CLASSES = [

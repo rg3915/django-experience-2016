@@ -1,3 +1,5 @@
+{% load activeurl %}
+
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -13,9 +15,10 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          {% activeurl %}
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="page-scroll" href="#about">Sobre</a>
+                    <a class="page-scroll" href="{% url 'core:about' %}">Sobre</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#services">Serviços</a>
@@ -27,6 +30,7 @@
                     <a class="page-scroll" href="#contact">Contato</a>
                 </li>
             </ul>
+          {% endactiveurl %}
         </div>
         <!-- /.navbar-collapse -->
     </div>
