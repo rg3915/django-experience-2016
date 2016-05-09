@@ -1,3 +1,10 @@
+body.login {
+  background: url("http://pre03.deviantart.net/80f0/th/pre/f/2012/213/c/d/django__black_and_white__by_aruseni-d59g4lg.png") no-repeat center center fixed;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
 html {
   position: relative;
   min-height: 100%;
