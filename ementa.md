@@ -42,6 +42,8 @@ O objetivo inicial é cumprir esta ementa:
 
 * Gráficos
 
+* Filtros com dois ou mais campos de listagem
+
 * Buscas múltiplas
     * Consultas mais avançadas com paginação (seria interessante): um template com vários campos de busca, ex.: Nome, cidade, bairro, etc. e o resultado sendo paginado.
 
