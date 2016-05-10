@@ -66,6 +66,8 @@ target/
 djexperience/core/migrations/
 .venv
 
+#Mac
+.DS_Store
 
 #PyCharm
 .idea

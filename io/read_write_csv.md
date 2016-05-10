@@ -102,6 +102,7 @@ A partir daí iremos popular o banco com os dados de `address_list`.
 Leia também:
 
 [CSV File Reading and Writing][0]
+
 [Outputting CSV with Django][1]
 
 [0]: https://docs.python.org/3/library/csv.html
