@@ -1,4 +1,4 @@
-# Ler/Escrever csv
+# Ler/escrever CSV
 
 ## Escrevendo CSV em Python
 
@@ -70,8 +70,6 @@ $ cat io/users.csv
 admin,admin@example.com,2016-05-09 19:50:52+00:00
 regis,regis@example.com,2016-05-10 17:27:44+00:00
 ```
-
-aqui
 
 ### Exportando csv a partir de um script em Python
 
