@@ -87,5 +87,5 @@ print(txt.read())
 ```
 
 ```bash
-$ python read_file.py io/file.txt
+$ python read_file.py file.txt
 ```
