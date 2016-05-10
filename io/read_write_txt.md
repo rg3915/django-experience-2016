@@ -1,4 +1,4 @@
-# Ler/Escrever txt
+# Ler/escrever TXT
 
 ## Escrevendo txt em Python
 

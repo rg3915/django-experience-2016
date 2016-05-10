@@ -71,7 +71,7 @@ admin,admin@example.com,2016-05-09 19:50:52+00:00
 regis,regis@example.com,2016-05-10 17:27:44+00:00
 ```
 
-### Exportando csv a partir de um script em Python
+### Exportando CSV a partir de um script em Python
 
 Podemos criar um arquivo para exportar o csv.
 
@@ -95,7 +95,7 @@ with open('users.csv', 'w', newline='') as csvfile:
 $ ./manage.py shell < export_csv.py
 ```
 
-## Lendo csv com Python
+## Lendo CSV com Python
 
 ```bash
 $ python
@@ -124,7 +124,7 @@ with open('users.csv') as csvfile:
 ```
 
 
-## Importando dados de um csv
+## Importando dados de um CSV
 
 ```python
 import csv
