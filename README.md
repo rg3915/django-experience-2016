@@ -16,9 +16,38 @@ Estamos utilizando
 
 ## Wiki
 
-Leia a [wiki][4]
+Leia a [wiki][4].
 
 ## Como desenvolver?
+
+Baixe e rode o `setup.sh`.
+
+```bash
+# wget https://raw.githubusercontent.com/rg3915/django-experience/master/setup.sh
+# source setup.sh
+```
+
+Ou siga o passo a passo.
+
+* Clone o repositório.
+* Crie um virtualenv com Python 3.5
+* Ative o virtualenv.
+* Instale as dependências.
+* Configure a instância com o .env
+* Carregue os dados no banco
+* Execute os testes.
+
+```bash
+git clone https://github.com/rg3915/django-experience.git
+cd django-experience
+python -m venv .venv
+source .venv/bin/activate
+PS1="(`basename \"$VIRTUAL_ENV\"`):/\W$ " # opcional
+pip install -r requirements-dev.txt
+cp contrib/env-sample .env
+# make initial
+python manage.py test
+```
 
 ## Como fazer o deploy
 
