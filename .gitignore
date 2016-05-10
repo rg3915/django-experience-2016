@@ -65,3 +65,7 @@ target/
 *.env
 djexperience/core/migrations/
 .venv
+
+
+#PyCharm
+.idea
