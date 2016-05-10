@@ -12,7 +12,7 @@ O objetivo inicial é cumprir esta ementa:
 * Herança de templates
 
 * [I/O: Ler/Escrever txt][0]
-* I/O: Ler/Escrever csv
+* [I/O: Ler/Escrever csv][1]
 * I/O: Ler/Escrever xml
 * I/O: Ler/Escrever JSON
 
@@ -52,3 +52,4 @@ O objetivo inicial é cumprir esta ementa:
 * Consumindo o DRF
 
 [0]: https://github.com/rg3915/django-experience/blob/master/io/read_write_txt.md
+[1]: https://github.com/rg3915/django-experience/blob/master/io/read_write_csv.md
