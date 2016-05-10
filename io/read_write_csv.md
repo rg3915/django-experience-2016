@@ -47,6 +47,9 @@ with open('users.csv', 'w', newline='') as csvfile:
     user_writer.writerow(titles)
     for user in users:
         user_writer.writerow(user)
+
+
+# done
 ```
 
 ```bash
