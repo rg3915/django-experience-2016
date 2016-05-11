@@ -51,5 +51,7 @@ O objetivo inicial é cumprir esta ementa:
 
 * Consumindo o DRF
 
-[0]: https://github.com/rg3915/django-experience/blob/master/io/read_write_txt.md
-[1]: https://github.com/rg3915/django-experience/blob/master/io/read_write_csv.md
+[0]: txt/read_write_txt.md
+[1]: txt/read_write_csv.md
+[2]: txt/read_write_xml.md
+[3]: txt/read_write_json.md

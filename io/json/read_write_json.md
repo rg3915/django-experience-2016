@@ -93,7 +93,7 @@ with open('io/json/users.json', 'w') as file_handler:
     json.dump({'users': json_data}, file_handler, indent=4)
 ```
 
-São necessários três passos aqui para _limpar_ o resultado do `serialize`. Grosso modo, já poderíamos salvar como arquivo JSON o resultado do `serilaize`, que é uma **string**:
+São necessários três passos aqui para _limpar_ o resultado do `serialize`. Grosso modo, já poderíamos salvar como arquivo JSON o resultado do `serialize`, que é uma **string**:
 
 
 ```
@@ -186,6 +186,22 @@ admin admin@adm.in 2016-05-11T11:58:49.965Z
 ## Importando dados de um JSON
 
 A partir dos dados do bloco anterior já podemos popular o banco com os dados de `user`.
+
+## Os comandos `dumpdata` e `loaddata` do Django
+
+E por fim não podemos nos esquecer dos comandos `dumpdata` e `loaddata` do Django.
+
+O `dumpdata` é para fazer o backup dos dados do banco de dados.
+
+```console
+$ python manage.py dumpdata --format=json --indent=2 > fixtures.json
+```
+
+O `loaddata` é para carregar dados json no banco de dados.
+
+```console
+$ python manage.py loaddata fixtures.json
+```
 
 Leia também:
 
