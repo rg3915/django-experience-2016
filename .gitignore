@@ -71,3 +71,6 @@ djexperience/core/migrations/
 
 #PyCharm
 .idea
+
+#Vim
+.ropeproject/
