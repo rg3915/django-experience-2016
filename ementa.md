@@ -14,7 +14,7 @@ O objetivo inicial é cumprir esta ementa:
 * [I/O: Ler/escrever TXT][0]
 * [I/O: Ler/escrever CSV][1]
 * I/O: Ler/escrever XML
-* I/O: Ler/escrever JSON
+* [I/O: Ler/escrever JSON][3]
 
 * Entendendo os modelos do Django: One to One, One to Many, Many to Many, Abstract Model, Multi table inheritance, Proxy models
 
@@ -51,7 +51,7 @@ O objetivo inicial é cumprir esta ementa:
 
 * Consumindo o DRF
 
-[0]: txt/read_write_txt.md
-[1]: txt/read_write_csv.md
-[2]: txt/read_write_xml.md
-[3]: txt/read_write_json.md
+[0]: io/txt/read_write_txt.md
+[1]: io/csv/read_write_csv.md
+[2]: io/xml/read_write_xml.md
+[3]: io/json/read_write_json.md
