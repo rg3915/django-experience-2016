@@ -2,56 +2,53 @@
 
 O objetivo inicial é cumprir esta ementa:
 
-* Admin: Inserir logo e rodapé na tela de login e alterar o texto de 'Administração do Django' para o nome do projeto
-* Admin: Alterar o plano de fundo da tela de login
-* Landpage
-    Algumas sugestões:
-    * http://startbootstrap.com/template-categories/all/
-    * https://onepagelove.com/templates/free-templates
+## Python e Django geral
 
-* Herança de templates
+- [ ] IO
+  - [x] [Ler/escrever TXT](io/txt/read_write_txt.md)
+  - [x] [Ler/escrever CSV](io/csv/read_write_csv.md)
+  - [ ] Ler/escrever XML
+  - [x] [Ler/escrever JSON](io/json/read_write_json.md)
 
-* [I/O: Ler/escrever TXT][0]
-* [I/O: Ler/escrever CSV][1]
-* I/O: Ler/escrever XML
-* [I/O: Ler/escrever JSON][3]
+## Customizar Django Admin
 
-* Entendendo os modelos do Django: One to One, One to Many, Many to Many, Abstract Model, Multi table inheritance, Proxy models
+- [x] Tela de login no admin
+  - [x] Inserir logo e rodapé na [tela de login](http://localhost:8000/admin/) e alterar o texto de _Administração do Django_ para o nome do projeto
+  - [x] Alterar o plano de fundo da [tela de login](http://localhost:8000/admin/)
+- [ ] Landing page (sugestões: [Start Bootstrap](http://startbootstrap.com/template-categories/all/) e [One Page Love](https://onepagelove.com/templates/free-templates))
 
-* Dominando o Shell do Django
+## Backend
 
-* Importando dados de CSV
+- [ ] Entendendo os modelos do Django
+  - [ ] One to One
+  - [ ] One to Many
+  - [ ] Many to Many
+  - [ ] Abstract Model
+  - [ ] Multi table inheritance
+  - [ ] Proxy models
+- [ ] Herança de templates
+- [ ] CRUD
+  - [ ] Function Based Views
+  - [ ] Class Based Views
+- [ ] Mixins
+- [ ] Managers
+- [ ] Várias formas de se fazer um formulário
+- [ ] Inlineformset_factory
+- [ ] Aggregate and Annotate
+- [ ] Filtros com dois ou mais campos de listagem
+- [ ] Buscas múltiplas
+  - [ ] Consultas avançadas, um template com vários campos de busca (por exemplo: ome, cidade, bairro, etc.)
+  - [ ] Resultado com paginação
+- [ ] Consumindo o DRF
 
-* Inserindo dados randômicos
+## manager.py
 
-* CRUD com Function Based Views
+- [ ] Dominando o Shell do Django
+- [ ] Importando dados de CSV
+- [ ] Inserindo dados randômicos
 
-* CRUD com Class Based Views
+## Extensões e pacotes externos
 
-* Mixins
-
-* Managers
-
-* Várias formas de se fazer um formulário
-
-* Inlineformset_factory
-
-* Selenium
-
-* Aggregate and Annotate
-
-* Gráficos
-
-* Filtros com dois ou mais campos de listagem
-
-* Buscas múltiplas
-    * Consultas mais avançadas com paginação (seria interessante): um template com vários campos de busca, ex.: Nome, cidade, bairro, etc. e o resultado sendo paginado.
-
-* Django Rest Framework
-
-* Consumindo o DRF
-
-[0]: io/txt/read_write_txt.md
-[1]: io/csv/read_write_csv.md
-[2]: io/xml/read_write_xml.md
-[3]: io/json/read_write_json.md
+- [ ] Django Rest Framework
+- [ ] Selenium
+- [ ] Gráficos
