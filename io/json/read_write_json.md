@@ -203,6 +203,10 @@ O `loaddata` é para carregar dados json no banco de dados.
 $ python manage.py loaddata fixtures.json
 ```
 
+Ambos os comandos — `dumpdata` e `loaddata` — adotam o formato de saída `serialize(…)` que limpamos na parte [Escrevendo JSON com Django](#escrevendo-json-com-django). Ou seja, se quisermos preparar dados para serem lidos pelo `loaddata` podemos salvar o arquivo direto com a **string** que `serialize(…)` retorna utilizando os [métodos de criação de arquivo de texto](../txt/read_write_txt.md).
+
+---
+
 Leia também:
 
 * [JSON encoder and decoder][0]
