@@ -1,0 +1,14 @@
+{
+    "users": [
+        {
+            "email": "",
+            "date_joined": "2016-05-10T18:08:03.275Z",
+            "username": "cuducos"
+        },
+        {
+            "email": "admin@adm.in",
+            "date_joined": "2016-05-11T11:58:49.965Z",
+            "username": "admin"
+        }
+    ]
+}

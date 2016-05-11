@@ -9,7 +9,7 @@
 ## [Ler/escrever em JSON][3]
 
 
-[0]: read_write_txt.md
-[1]: read_write_csv.md
+[0]: txt/read_write_txt.md
+[1]: csv/read_write_csv.md
 [2]: #lerescrever-em-xml
-[3]: #lerescrever-em-json
+[3]: json/read_write_json.md
