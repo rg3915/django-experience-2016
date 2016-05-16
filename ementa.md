@@ -15,7 +15,7 @@ O objetivo inicial é cumprir esta ementa:
 - [x] Tela de login no admin
   - [x] Inserir logo e rodapé na [tela de login](http://localhost:8000/admin/) e alterar o texto de _Administração do Django_ para o nome do projeto
   - [x] Alterar o plano de fundo da [tela de login](http://localhost:8000/admin/)
-- [ ] Landing page (sugestões: [Start Bootstrap](http://startbootstrap.com/template-categories/all/) e [One Page Love](https://onepagelove.com/templates/free-templates))
+- [x] Landing page (sugestões: [Start Bootstrap](http://startbootstrap.com/template-categories/all/) e [One Page Love](https://onepagelove.com/templates/free-templates))
 
 ## Backend
 
