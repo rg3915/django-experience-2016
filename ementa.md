@@ -26,7 +26,7 @@ O objetivo inicial é cumprir esta ementa:
   - [ ] Abstract Model
   - [ ] Multi table inheritance
   - [ ] Proxy models
-- [ ] Herança de templates
+- [x] Herança de templates
 - [ ] CRUD
   - [ ] Function Based Views
   - [ ] Class Based Views
