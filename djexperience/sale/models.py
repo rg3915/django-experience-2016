@@ -15,6 +15,10 @@ STATUS_LIST = (
 )
 
 
+class Customer(models.Model):
+    name = models.CharField('cliente', max_length=50)
+
+
 class Sale(models.Model):
     ordered = models.OneToOneField('Ordered', verbose_name='pedido')
     paid = models.BooleanField('pago')

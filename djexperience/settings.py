@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'daterange_filter',
     'django_activeurl',
+    # my apps
+    'djexperience.sale',
 ]
 
 MIDDLEWARE_CLASSES = [
