@@ -19,9 +19,9 @@ O objetivo inicial é cumprir esta ementa:
 
 ## Backend
 
-- [x] Entendendo os modelos do Django
-  - [x] One to One
-  - [x] One to Many
+- [ ] Entendendo os modelos do Django
+  - [x] [One to One](dev/orm#one-to-one-um-para-um)
+  - [x] [One to Many](dev/orm#one-to-many-um-para-muitos)
   - [ ] Many to Many
   - [ ] Abstract Model
   - [ ] Multi table inheritance

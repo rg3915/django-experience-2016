@@ -33,22 +33,12 @@ Um **cliente** pode fazer vários **pedidos**, então para reproduzir o esquema 
 
 <pre>
     class Customer(models.Model):
-        gender = models.CharField(_(u'gênero'), max_length=1, choices=gender_list)
-        treatment = models.CharField(
-            _('tratamento'), max_length=4, choices=treatment_list, blank=True)
-        first_name = models.CharField(_('nome'), max_length=30)
-        last_name = models.CharField(_('sobrenome'), max_length=30)
-        birthday = models.DateTimeField(_('nascimento'), null=True, blank=True)
-        email = models.EmailField(_('e-mail'), blank=True)
-        active = models.BooleanField(_('ativo'), default=True)
-        blocked = models.BooleanField(_('bloqueado'), default=False)
+        name = models.CharField(_('nome'), max_length=30)
 
 
     class Ordered(TimeStampedModel):
-        customer = models.<b>ForeignKey</b>(
-            'Customer', verbose_name=_('cliente'), related_name='cliente_pedido')
-        status = models.CharField(
-            _('status'), max_length=2, choices=status_list, default='pe')
+        customer = models.<b>ForeignKey</b>('Customer', verbose_name=_('cliente'), related_name='cliente_pedido')
+        status = models.CharField(_('status'), max_length=2, choices=status_list, default='pe')
 </pre>
 
 
