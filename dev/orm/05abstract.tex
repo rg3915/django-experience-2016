@@ -1,0 +1,57 @@
+\documentclass[tikz]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tikz-uml}
+\usepackage{tikz-er2}
+\usetikzlibrary{positioning}
+
+\begin{document}
+
+\tikzstyle{every entity} = [fill=blue!20]
+\tikzstyle{every relationship} = [fill=red!20]
+\tikzstyle{every isa} = [top color=white, bottom color=green!20, 
+                         draw=green!50!black!100, drop shadow]
+
+\begin{tikzpicture}[>=latex]
+
+\umlclass[x=0,y=5,fill=gray!25]{Person}{
+	- first\_name \\
+	- last\_name \\
+	- birthday \\
+	- email \\
+	- active \\
+	- blocked \\
+}{}
+
+\umlclass[x=-5,y=0]{Customer}{
+	- first\_name \\
+	- last\_name \\
+	- birthday \\
+	- email \\
+	- active \\
+	- blocked \\
+}{}
+
+\umlclass[x=5,y=0]{Seller}{
+	- first\_name \\
+	- last\_name \\
+	- birthday \\
+	- email \\
+	- active \\
+	- blocked \\
+	\color{blue}{- internal} \\
+	\color{blue}{- commissioned} \\
+	\color{blue}{- commission} \\
+}{}
+
+\draw[->] (Person) -- node[above]{abstract inheritance} (Customer);
+\draw[->] (Person) -- node[above]{abstract inheritance} (Seller);
+
+\node[entity] (person) at (-12,5) {Person};
+\node[isa] (usu) [below=2cm of person] {} edge (person);
+\node[entity] (customer) [below left=2cm of usu] {Customer} edge (usu);
+\node[entity] (seller) [below right=2cm of usu] {Seller} edge (usu);
+
+\end{tikzpicture}
+
+\end{document}

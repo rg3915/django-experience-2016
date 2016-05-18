@@ -1,0 +1,34 @@
+\documentclass[tikz]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tikz-uml}
+
+\begin{document}
+
+\begin{tikzpicture}[>=latex]
+
+\umlclass[x=5,y=0,fill=green!25]{Book}{
+	- isbn (int) \\
+	- name \\
+	- rating (float) \\
+	\color{blue}{+ authors (m2m)} \\
+	\color{orange}{- publisher (fk)} \\
+	- price (decimal) \\
+	- stock\_min \\
+	- stock \\
+	- created \\
+	- modified \\
+}{}
+
+\umlclass[x=10,y=-.5]{Distributor}{
+	- name \\
+	\color{blue}{- books (m2m)} \\
+	- price \\
+}{}
+
+
+\draw[->](Book) to[out=0,in=180] node[above]{m2m} (Distributor);
+
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,27 @@
+\documentclass[tikz]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tikz-uml}
+
+\begin{document}
+
+\begin{tikzpicture}[>=latex]
+
+\umlclass[x=0,y=.5,fill=green!25]{Ordered}{
+	+ customer \\
+	- status \\
+}{}
+
+\umlclass[x=10,y=0]{Sale}{
+	\color{blue}{+ ordered} \\
+	- paid (b) \\
+	- date\_paid \\
+	- method (forma pagto)\\
+	- deadline (prazo de entrega) \\
+}{}
+
+\draw[->] (Ordered) to[out=0,in=180] node[above]{OneToOne} (Sale);
+
+\end{tikzpicture}
+
+\end{document}

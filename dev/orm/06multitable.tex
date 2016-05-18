@@ -1,0 +1,46 @@
+\documentclass[tikz]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tikz-uml}
+\usepackage{tikz-er2}
+\usetikzlibrary{positioning}
+
+\begin{document}
+
+\tikzstyle{every entity} = [fill=blue!20]
+\tikzstyle{every relationship} = [fill=red!20]
+\tikzstyle{every isa} = [top color=white, bottom color=green!20, 
+                         draw=green!50!black!100, drop shadow]
+
+\begin{tikzpicture}[>=latex]
+
+\umlclass[x=0,y=5]{Person}{
+	- first\_name \\
+	- last\_name \\
+	- birthday \\
+	- email \\
+	- active \\
+	- blocked \\
+}{}
+
+\umlclass[x=-5,y=0]{PF}{
+	- CPF \\
+	- RG \\
+}{}
+
+\umlclass[x=5,y=0]{PJ}{
+	- CNPJ \\
+	- IE \\
+}{}
+
+\draw[->] (Person) -- node[above]{multi-table inheritance} (PF);
+\draw[->] (Person) -- node[above]{multi-table inheritance} (PJ);
+
+\node[entity] (person) at (-12,5) {Person};
+\node[isa] (usu) [below=2cm of person] {} edge (person);
+\node[entity] (PF) [below left=2cm of usu] {PF} edge (usu);
+\node[entity] (PJ) [below right=2cm of usu] {PJ} edge (usu);
+
+\end{tikzpicture}
+
+\end{document}

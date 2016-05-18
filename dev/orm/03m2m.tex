@@ -1,0 +1,45 @@
+\documentclass[tikz]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tikz-uml}
+
+\begin{document}
+
+\begin{tikzpicture}[>=latex]
+
+\umlclass[x=0,y=2]{Author}{
+	- name \\
+	- age (+int)\\
+}{}
+
+\umlclass[x=0,y=-2]{Publisher}{
+	- name \\
+	- num\_awards (+int) \\
+}{}
+
+\umlclass[x=5,y=0,fill=green!25]{Book}{
+	- isbn (int) \\
+	- name \\
+	- rating (float) \\
+	\color{blue}{+ authors (m2m)} \\
+	\color{orange}{- publisher (fk)} \\
+	- price (decimal) \\
+	- stock\_min \\
+	- stock \\
+	- created \\
+	- modified \\
+}{}
+
+\umlclass[x=10,y=-.5]{Store}{
+	- name \\
+	\color{blue}{- books (m2m)} \\
+}{}
+
+
+\draw[->](Author) to[out=0,in=180] node[above]{m2m} (Book);
+\draw[->](Publisher) to[out=0,in=180] node[above]{fk} (Book);
+\draw[->](Book) to[out=0,in=180] node[above]{m2m} (Store);
+
+\end{tikzpicture}
+
+\end{document}

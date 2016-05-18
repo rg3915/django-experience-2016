@@ -1,0 +1,30 @@
+\documentclass[tikz]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tikz-uml}
+
+\begin{document}
+
+\begin{tikzpicture}[>=latex]
+
+\umlclass[x=0,y=0]{Customer}{
+	- gender \\
+	- treatment \\
+	- first\_name \\
+	- last\_name \\
+	- birthday \\
+	- email \\
+	- active \\
+	- blocked \\
+}{}
+	
+\umlclass[x=10,y=1,fill=green!25]{Ordered}{
+	\color{blue}{+ customer} \\
+	- status \\
+}{}
+
+\draw[->] (Customer) to[out=0,in=180] node[above]{fk} (Ordered);
+
+\end{tikzpicture}
+
+\end{document}
