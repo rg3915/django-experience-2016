@@ -74,3 +74,5 @@ djexperience/core/migrations/
 
 #Vim
 .ropeproject/
+
+*migrations/
