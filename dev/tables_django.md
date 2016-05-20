@@ -143,3 +143,53 @@
 
 ### App: Stock
 
+
+### App: Bookstore
+
+**People(TimeStampedModel, Address)**
+* gender (list)
+* treatment (list)
+* first_name *
+* last_name
+* email
+* slug *
+* photo
+* birthday
+* company
+* department
+* active (boolean)
+* blocked (boolean)
+
+**PF(People)** (MTI)
+* cpf
+* rg
+
+**PJ(People)** (MTI)
+* cnpj
+* ie
+
+**Customer(People)** (MTI)
+
+**Provider(People)** (MTI)
+* books (m2m)
+* price (decimal)
+
+**Author(People)** (MTI)
+
+**Publisher**
+* name
+* num_awards (int)
+
+**Book (TimeStampedModel)**
+* isbn (int)
+* name
+* rating (float)
+* authors (m2m)
+* publisher (FK)
+* price (decimal)
+* stock_min
+* stock
+
+**Store (Address)**
+* name
+* books (m2m)
