@@ -35,19 +35,19 @@
 * last_name
 * email
 * occupation (FK)
-* person_type *
-* customer_type *
+* person_type (list) *
+* customer_type (list) *
 
 **PhonePerson**
 * phone
-* people (FK)
+* person (FK)
 * phone_type (list)
 
 **Employee(People, User)**
 * occupation (FK)
 * date_release
-* internal(boolean)
-* commissioned(boolean)
+* internal (bool)
+* commissioned (bool)
 * commission
 
 **PhoneEmployee**
@@ -69,7 +69,7 @@
 ### App: Product
 
 **Brand**
-* brand *
+* brand
 
 **Product (TimeStampedModel)**
 * imported (bool)
@@ -87,6 +87,9 @@
 * stock_min (int) *
 * stock (int) *
 
+**TypeProduct**
+* type_product
+
 
 ### App: Selling
 
@@ -99,8 +102,8 @@
 * ordered (o2o) *
 * paid (bool)
 * date_paid
-* method_paid (forma de pagamento)
-* deadline (prazo de entrega)
+* method_paid (forma de pagamento) (list)
+* deadline (prazo de entrega) (list)
 
 
 ### App: Buying
