@@ -52,5 +52,5 @@ python manage.py test
 [1]: https://github.com/rg3915/django-experience/blob/master/ementa.md
 [2]: https://www.python.org/
 [3]: https://virtualenv.readthedocs.org
-[4]: wiki
+[4]: https://github.com/rg3915/django-experience/wiki
 [5]: dev
