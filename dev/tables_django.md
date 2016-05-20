@@ -86,3 +86,23 @@
 * ipi (Decimal)
 * stock_min (int) *
 * stock (int) *
+
+
+### App: Selling
+
+**Ordered (TimeStampedModel)**
+* customer (FK) *
+* seller (FK) *
+* status_ordered *
+
+**Sale (TimeStampedModel)**
+* ordered (o2o) *
+* paid (bool)
+* date_paid
+* method_paid (forma de pagamento)
+* deadline (prazo de entrega)
+
+
+### App: Buying
+
+
