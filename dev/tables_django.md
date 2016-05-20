@@ -66,3 +66,23 @@
 **Seller(Employee)** (Proxy)
 
 
+### App: Product
+
+**Brand**
+* brand *
+
+**Product (TimeStampedModel)**
+* imported (bool)
+* outofline (bool)
+* perishable (bool)
+* ncm
+* brand (FK)
+* product *
+* short_description *
+* description
+* cost (Decimal) *
+* price (Decimal) *
+* icms (Decimal)
+* ipi (Decimal)
+* stock_min (int) *
+* stock (int) *
