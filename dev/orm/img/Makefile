@@ -18,3 +18,5 @@ convert:
 	convert -density 300 04m2m.pdf 04m2m.jpg
 	convert -density 300 05abstract.pdf 05abstract.jpg
 	convert -density 300 06multitable.pdf 06multitable.jpg
+	convert -density 300 07multitable_customer_provider.pdf 07multitable_customer_provider.jpg
+	convert -density 300 08multitable_professor_student.pdf 08multitable_professor_student.jpg
