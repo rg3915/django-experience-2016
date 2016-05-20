@@ -42,7 +42,65 @@ Um **cliente** pode fazer vários **pedidos**, então para reproduzir o esquema 
 </pre>
 
 
-## Many to Many
+## Many to Many (muitos para muitos)
+
+Este relacionamento permite que vários registros de uma tabela se relacione com vários registros da outra tabela.
+
+![image](img/03m2m.jpg)
+
+Um **autor** pode ter vários **livros** e cada **livro** pode ter vários **autores**, então para reproduzir o esquema acima, usamos o seguinte código:
+
+<pre>
+    class Author(models.Model):
+        name = models.CharField(_('nome'), max_length=50, unique=True)
+        age = models.PositiveIntegerField(_('idade'))
+
+
+    class Book(TimeStampedModel):
+        isbn = models.IntegerField()
+        name = models.CharField(_('nome'), max_length=50)
+        rating = models.FloatField(_(u'classificação'))
+        authors = models.<b>ManyToManyField</b>('Author', verbose_name='autores')
+        publisher = models.ForeignKey('Publisher', verbose_name='editora')
+        price = models.DecimalField(_(u'preço'), max_digits=5, decimal_places=2)
+        stock_min = models.PositiveIntegerField(_(u'Estoque mínimo'), default=0)
+        stock = models.IntegerField(_('Estoque atual'))
+</pre>
+
+E o mesmo para **lojas**.
+
+<pre>
+    class Store(models.Model):
+        name = models.CharField(_('nome'), max_length=50)
+        books = models.<b>ManyToManyField</b>('Book', verbose_name='livros')
+</pre>
+
+Por baixo dos panos o Django cria uma terceira tabela (escondida).
+
+![image](img/sqlite01.png)
+    
+Neste caso, temos dois livros com dois autores cada.
+
+    id|book_id|author_id
+    1|1|1
+    2|1|2
+    3|2|3
+    4|2|4
+
+E ainda, na sequência temos dois livros diferentes do mesmo autor.
+
+    id|book_id|author_id
+    5|3|5
+    6|4|5
+
+### Mais um exemplo
+
+Um outro exemplo legal é o caso onde vários **livros** podem ser entregues por vários **fornecedores**.
+
+![image](img/04m2m.jpg)
+
+
+
 ## Abstract Model
 ## Multi table inheritance
 ## Proxy models
