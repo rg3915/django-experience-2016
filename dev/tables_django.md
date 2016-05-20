@@ -106,3 +106,40 @@
 ### App: Buying
 
 
+
+### App: Proposal
+
+**Work(Address)**
+* name_work *
+* slug *
+* person(contato) (FK)
+* customer(cliente) (FK) *
+
+**Proposal(TimeStampedModel)**
+* num_prop *
+* priority (list)
+* prop_type ('R','OP') *
+* num_type_prop (0,1,2,...) *
+* category (list)
+* description
+* work (FK) *
+* person(contato) (FK)
+* employee (FK) *
+* seller (FK)
+* status (list) *
+* date_conclusion
+* price
+* obs
+
+**Contract**
+* proposal (o2o) *
+* contractor (FK) *
+* is_canceled (FK)
+
+**NumLastProposal**
+* num_last_prop *
+
+
+
+### App: Stock
+
