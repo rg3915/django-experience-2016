@@ -32,6 +32,7 @@ O objetivo inicial é cumprir esta ementa:
   - [ ] Class Based Views
 - [ ] Mixins
 - [ ] Managers
+- [ ] Custom template tags
 - [ ] Várias formas de se fazer um formulário
 - [ ] Inlineformset_factory
 - [ ] Aggregate and Annotate
