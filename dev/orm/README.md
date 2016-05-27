@@ -102,6 +102,8 @@ Um outro exemplo legal é o caso onde vários **livros** podem ser entregues por
 
 ## Abstract Inheritance (Herança Abstrata)
 
+[Abstract base classes](https://docs.djangoproject.com/es/1.9/topics/db/models/#abstract-base-classes)
+
 Neste tipo de modelo o Django cria novas tabelas a partir de uma tabela abstrata (base).
 
 As novas tabelas são uma **cópia** da primeira.
@@ -143,6 +145,8 @@ Note que a tabela **Customer** é uma cópia de **Person**, e **Seller** também
 
 ## Multi-table Inheritance (Herança Multi-tabela)
 
+[Multi-table inheritance](https://docs.djangoproject.com/es/1.9/topics/db/models/#multi-table-inheritance)
+
 Na herança múltipla o Django cria um relacionamento **um pra um (OneToOne)** automaticamente entre as tabelas.
 
 ![image](img/06multitable.jpg)
@@ -176,7 +180,7 @@ E se você digitar...
 
 ## Proxy models
 
-O [proxy models] não cria uma nova tabela, ele apenas muda o **comportamento** de uma tabela no Django. Ou seja, o Django interpreta duas tabelas diferentes, mas no banco de dados existe apenas uma.
+O [proxy models](https://docs.djangoproject.com/es/1.9/topics/db/models/#proxy-models) não cria uma nova tabela, ele apenas muda o **comportamento** de uma tabela no Django. Ou seja, o Django interpreta duas tabelas diferentes, mas no banco de dados existe apenas uma.
 
 ### Exemplo
 
@@ -210,3 +214,4 @@ class Seller(Employee):
 ```
 
 Note o comando `proxy = True` em *Seller*.
+
