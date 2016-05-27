@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django_activeurl',
     # my apps
     'djexperience.sale',
+    'djexperience.bookstore',
 ]
 
 MIDDLEWARE_CLASSES = [

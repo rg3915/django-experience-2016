@@ -22,7 +22,7 @@ O objetivo inicial é cumprir esta ementa:
 - [ ] Entendendo os modelos do Django
   - [x] [One to One](dev/orm#one-to-one-um-para-um)
   - [x] [One to Many](dev/orm#one-to-many-um-para-muitos)
-  - [ ] Many to Many
+  - [x] [Many to Many](dev/orm#many-to-many-muitos-para-muitos)
   - [ ] Abstract Model
   - [ ] Multi table inheritance
   - [ ] Proxy models
