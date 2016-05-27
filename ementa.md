@@ -25,7 +25,7 @@ O objetivo inicial é cumprir esta ementa:
   - [x] [Many to Many](dev/orm#many-to-many-muitos-para-muitos)
   - [x] [Abstract Model](dev/orm#abstract-inheritance-herança-abstrata)
   - [x] [Multi table inheritance](dev/orm#multi-table-inheritance-herança-multi-tabela)
-  - [x] Proxy models(dev/orm#proxy-models)
+  - [x] [Proxy models](dev/orm#proxy-models)
 - [x] Herança de templates
 - [ ] CRUD
   - [ ] Function Based Views
