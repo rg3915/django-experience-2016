@@ -23,7 +23,7 @@
 	- blocked \\
 }{}
 
-\umlclass[x=-5,y=0]{Professor}{
+\umlclass[x=-5,y=0]{Teacher}{
 	- title \\
 }{}
 
@@ -32,12 +32,12 @@
 	- period \\
 }{}
 
-\draw[->] (Person) -- node[above]{multi-table inheritance} (Professor);
+\draw[->] (Person) -- node[above]{multi-table inheritance} (Teacher);
 \draw[->] (Person) -- node[above]{multi-table inheritance} (Student);
 
 \node[entity] (person) at (-12,5) {Person};
 \node[isa] (usu) [below=2cm of person] {} edge (person);
-\node[entity] (Professor) [below left=2cm of usu] {Professor} edge (usu);
+\node[entity] (Teacher) [below left=2cm of usu] {Teacher} edge (usu);
 \node[entity] (Student) [below right=2cm of usu] {Student} edge (usu);
 
 \end{tikzpicture}
