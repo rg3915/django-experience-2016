@@ -12,6 +12,32 @@ Veja em [tables_django.md][0] a relação de apps e tabelas usadas no projeto.
 
 ## Modelos
 
+Para gerar o gráfico do modelo façamos o seguinte:
+
+```bash
+sudo apt-get install graphviz libgraphviz-dev pkg-config
+pip install pygraphviz
+git clone https://github.com/nlhepler/pydot
+cd pydot
+python setup.py install
+cd ..
+rm -rf pydot
+pip install django-extensions
+pip install pyparsing
+```
+
+Para gerar o gráfico
+
+```console
+./manage.py graph_models -a -g -o dev/djexperience.png
+```
+
+Eu criei um Makefile onde você pode digitar, por exemplo:
+
+```console
+make mer n="02"
+```
+
 ## Gerando dados randômicos
 
 ## Comandos personalizados

@@ -8,8 +8,10 @@ migrate:
 test:
 	python manage.py test -n
 
+
 mer:
-	./manage.py graph_models -a -g -o dev/dj-exp.png
+	./manage.py graph_models -a -g -o dev/dj-exp${n}.png
+	# usage: make mer n="02"
 
 createuser:
 	./manage.py createsuperuser --username='admin' --email=''
