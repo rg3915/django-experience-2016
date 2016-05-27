@@ -2,6 +2,8 @@
 
 ## One to One (um para um)
 
+[One-to-one relationships](https://docs.djangoproject.com/es/1.9/topics/db/models/#one-to-one-relationships)
+
 Neste tipo de relacionamento também usamos **chave estrangeira**, só que um registro de uma tabela se relaciona apenas com um registro da outra tabela.
 
 ![image](img/02oneToone.jpg)
@@ -25,6 +27,8 @@ Uma **venda** pode ser feita a partir de apenas um **pedido**, então para repro
 
 ## One to Many (um para muitos)
 
+[Many-to-one relationships](https://docs.djangoproject.com/es/1.9/topics/db/models/#many-to-one-relationships)
+
 É o relacionamento onde usamos **chave estrangeira**, conhecido como **ForeignKey**.
 
 ![image](img/01fk.jpg)
@@ -43,6 +47,8 @@ Um **cliente** pode fazer vários **pedidos**, então para reproduzir o esquema 
 
 
 ## Many to Many (muitos para muitos)
+
+[Many-to-many relationships](https://docs.djangoproject.com/es/1.9/topics/db/models/#many-to-many-relationships)
 
 Este relacionamento permite que vários registros de uma tabela se relacione com vários registros da outra tabela.
 
