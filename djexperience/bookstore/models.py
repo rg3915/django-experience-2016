@@ -47,7 +47,7 @@ class PF(People):
     class Meta:
         ordering = ['first_name']
         verbose_name = 'pessoa física'
-        verbose_name_plural = 'pessoas física'
+        verbose_name_plural = 'pessoas físicas'
 
     def __str__(self):
         return self.first_name
@@ -60,7 +60,7 @@ class PJ(People):
     class Meta:
         ordering = ['first_name']
         verbose_name = 'pessoa jurídica'
-        verbose_name_plural = 'pessoas jurídica'
+        verbose_name_plural = 'pessoas jurídicas'
 
     def __str__(self):
         return self.first_name
