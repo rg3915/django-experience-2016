@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     # my apps
     'djexperience.sale',
     'djexperience.bookstore',
+    'djexperience.crm',
 ]
 
 MIDDLEWARE_CLASSES = [

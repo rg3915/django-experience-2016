@@ -100,7 +100,46 @@ Um outro exemplo legal é o caso onde vários **livros** podem ser entregues por
 ![image](img/04m2m.jpg)
 
 
+## Abstract Inheritance (Herança Abstrata)
 
-## Abstract Model
-## Multi table inheritance
+Neste tipo de modelo o Django cria novas tabelas a partir de uma tabela abstrata (base).
+
+As novas tabelas são uma **cópia** da primeira.
+
+Não existe relacionamento entre elas. Mas campos adicionais podem ser criados nas novas tabelas.
+
+![image](img/05abstract.jpg)
+
+<pre>
+    class Person(models.Model):
+        gender = models.CharField(_(u'gênero'), max_length=1, choices=gender_list)
+        treatment = models.CharField(
+            _('tratamento'), max_length=4, choices=treatment_list, blank=True)
+        first_name = models.CharField(_('nome'), max_length=30)
+        last_name = models.CharField(_('sobrenome'), max_length=30)
+        birthday = models.DateTimeField(_('nascimento'), null=True, blank=True)
+        email = models.EmailField(_('e-mail'), blank=True)
+        active = models.BooleanField(_('ativo'), default=True)
+        blocked = models.BooleanField(_('bloqueado'), default=False)
+
+    class Meta:
+        <b>abstract = True</b>
+
+
+    class Customer(Person):
+        pass
+
+
+    class Seller(Person):
+        internal = models.BooleanField(_('interno'), default=True)
+        commissioned = models.BooleanField(_('comissionado'), default=True)
+        commission = models.DecimalField(
+            _(u'comissão'), max_digits=6, decimal_places=2, default=0.01, blank=True)
+</pre>
+
+Note que a tabela **Customer** é uma cópia de **Person**, e **Seller** também é uma cópia, mas com campos adicionais.
+
+
+
+## Multi-table Inheritance
 ## Proxy models

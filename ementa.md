@@ -23,7 +23,7 @@ O objetivo inicial é cumprir esta ementa:
   - [x] [One to One](dev/orm#one-to-one-um-para-um)
   - [x] [One to Many](dev/orm#one-to-many-um-para-muitos)
   - [x] [Many to Many](dev/orm#many-to-many-muitos-para-muitos)
-  - [ ] Abstract Model
+  - [x] [Abstract Model](dev/orm#)
   - [ ] Multi table inheritance
   - [ ] Proxy models
 - [x] Herança de templates
