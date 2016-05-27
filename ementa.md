@@ -23,8 +23,8 @@ O objetivo inicial é cumprir esta ementa:
   - [x] [One to One](dev/orm#one-to-one-um-para-um)
   - [x] [One to Many](dev/orm#one-to-many-um-para-muitos)
   - [x] [Many to Many](dev/orm#many-to-many-muitos-para-muitos)
-  - [x] [Abstract Model](https://github.com/rg3915/django-experience/tree/master/dev/orm#abstract-inheritance-herança-abstrata)
-  - [ ] Multi table inheritance
+  - [x] [Abstract Model](dev/orm#abstract-inheritance-herança-abstrata)
+  - [x] [Multi table inheritance](dev/orm#multi-table-inheritance-herança-multi-tabela)
   - [ ] Proxy models
 - [x] Herança de templates
 - [ ] CRUD

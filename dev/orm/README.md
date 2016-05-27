@@ -141,5 +141,37 @@ Note que a tabela **Customer** é uma cópia de **Person**, e **Seller** também
 
 
 
-## Multi-table Inheritance
+## Multi-table Inheritance (Herança Multi-tabela)
+
+Na herança múltipla o Django cria um relacionamento **um pra um (OneToOne)** automaticamente entre as tabelas.
+
+![image](img/06multitable.jpg)
+
+Entrando no banco de dados vemos que a tabela `core_pf` possui um campo chamado `customer_ptr_id`....
+
+![image](img/core_pf.png)
+
+... e que os ids vão de 21 a 40, neste exemplo.
+
+Note que são os mesmos ids na tabela `customer`.
+
+![image](img/customer_table.png)
+
+E se você digitar...
+
+    sqlite> .schema core_pf
+    CREATE TABLE "core_pf" ("customer_ptr_id" integer NOT NULL PRIMARY KEY REFERENCES 
+    "core_customer" ("id"), "cpf" varchar(11) NOT NULL, "rg" varchar(10) NOT NULL);
+
+... você verá nitidamente que existe um relacionamento um pra um entre eles.
+
+### Outro exemplo
+
+![image](img/07multitable_customer_provider.jpg)
+
+### Outro exemplo
+
+![image](img/08multitable_teacher_student.jpg)
+
+
 ## Proxy models
