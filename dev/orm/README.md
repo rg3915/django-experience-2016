@@ -175,3 +175,38 @@ E se você digitar...
 
 
 ## Proxy models
+
+O [proxy models] não cria uma nova tabela, ele apenas muda o **comportamento** de uma tabela no Django. Ou seja, o Django interpreta duas tabelas diferentes, mas no banco de dados existe apenas uma.
+
+### Exemplo
+
+Um exemplo interessante é quando eu tenho uma tabela *Funcionário*, mas eu preciso da tabela *Vendedor*. Pra economizar tabela no banco de dados eu posso dizer que todo funcionário cujo **cargo é vendedor** pertence a "tabela" *Vendedor*.
+
+```python
+class Employee(People, User):
+    occupation = models.ForeignKey(
+        'Occupation', verbose_name='cargo', related_name='employee_occupation',
+        null=True, blank=True)
+    internal = models.BooleanField('interno', default=True)
+    commissioned = models.BooleanField('comissionado', default=True)
+    commission = models.DecimalField(
+        u'comissão', max_digits=6, decimal_places=2, default=0.01)
+
+
+class SellerManager(models.Manager):
+
+    def get_queryset(self):
+        return super(SellerManager, self).get_queryset()\
+            .filter(occupation__occupation='Vendedor')
+
+
+class Seller(Employee):
+    objects = SellerManager()
+
+    class Meta:
+        proxy = True
+        verbose_name = 'vendedor'
+        verbose_name_plural = 'vendedores'
+```
+
+Note o comando `proxy = True` em *Seller*.
