@@ -1,17 +1,14 @@
 from datetime import datetime
 from django.test import TestCase
-from django.contrib.auth.models import User
 from djexperience.crm.models import Employee, Occupation
-from .data import USER_DICT, EMPLOYEE_DICT
+from .data import EMPLOYEE_DICT
 
 
 class EmployeeTest(TestCase):
 
     def setUp(self):
-        self.user = User.objects.create(**USER_DICT)
         self.occupation = Occupation.objects.create(occupation='Gerente')
         self.obj = Employee.objects.create(
-            user=self.user,
             occupation=self.occupation,
             **EMPLOYEE_DICT)
 
@@ -26,4 +23,4 @@ class EmployeeTest(TestCase):
         self.assertEqual('regis', str(self.obj))
 
     def test_ordering(self):
-        self.assertListEqual(['user__first_name'], Employee._meta.ordering)
+        self.assertListEqual(['username'], Employee._meta.ordering)

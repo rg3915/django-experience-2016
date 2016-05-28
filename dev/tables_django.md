@@ -45,10 +45,10 @@
 
 **Employee(People, User)**
 * occupation (FK)
-* date_release
 * internal (bool)
 * commissioned (bool)
 * commission
+* date_release
 
 **PhoneEmployee**
 * phone

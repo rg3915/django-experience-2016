@@ -1,11 +1,13 @@
 from django.utils import timezone
 
+hashpass = 'pbkdf2_sha256$12000$Pe4addAsDo1D$xEtHWLnSIVkEppr4pbK69SBhuLwWsSHdXyhkCZBNktA='
+
 USER_DICT = {
     'username': 'regis',
     'first_name': 'Regis',
     'last_name': 'Santos',
     'email': 'regis@example.com',
-    'password': 'demodemo',
+    'password': hashpass,
 }
 
 PERSON_DICT = {
@@ -31,9 +33,15 @@ PERSON_DICT = {
 }
 
 EMPLOYEE_DICT = {
+    'username': 'regis',
+    'first_name': 'Regis',
+    'last_name': 'Santos',
+    'email': 'regis@example.com',
+    'password': hashpass,
     'gender': 'M',
     'treatment': 'sr',
     'slug': 'regis',
+    'birthday': '1985-12-01 02:42:30+00:00',
     'company': 'Acme',
     'department': 'Tecnologia',
     'cpf': '28586897337',
@@ -45,6 +53,6 @@ EMPLOYEE_DICT = {
     'uf': 'GO',
     'cep': '74665841',
     'active': True,
-    'date_entry': timezone.now(),
+    'blocked': False,
     'date_release': timezone.now(),
 }
