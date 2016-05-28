@@ -38,7 +38,7 @@ O objetivo inicial é cumprir esta ementa:
 - [ ] Aggregate and Annotate
 - [ ] Filtros com dois ou mais campos de listagem
 - [ ] Buscas múltiplas
-  - [ ] Consultas avançadas, um template com vários campos de busca (por exemplo: ome, cidade, bairro, etc.)
+  - [ ] Consultas avançadas, um template com vários campos de busca (por exemplo: nome, cidade, bairro, etc.)
   - [ ] Resultado com paginação
 - [ ] Consumindo o DRF
 
