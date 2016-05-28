@@ -2,7 +2,7 @@ install:
 	pip install -r requirements.txt
 
 migrate:
-	./manage.py makemigrations
+	./manage.py makemigrations bookstore crm sale
 	./manage.py migrate
 
 test:
