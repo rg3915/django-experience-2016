@@ -26,6 +26,7 @@ O objetivo inicial é cumprir esta ementa:
   - [x] [Abstract Model](dev/orm#abstract-inheritance-herança-abstrata)
   - [x] [Multi table inheritance](dev/orm#multi-table-inheritance-herança-multi-tabela)
   - [x] [Proxy models](dev/orm#proxy-models)
+  - [x] [Extendendo a classe User](issues/21)
 - [x] Herança de templates
 - [ ] CRUD
   - [ ] Function Based Views

@@ -61,21 +61,21 @@ class Customer(Person):
         verbose_name_plural = 'clientes'
 
 
-# class Employee(User):
-#     occupation = models.ForeignKey(
-#         'Occupation', verbose_name='cargo', null=True, blank=True)
-#     internal = models.BooleanField('interno', default=True)
-#     commissioned = models.BooleanField('comissionado', default=True)
-#     commission = models.DecimalField(
-#         'comissão', max_digits=6, decimal_places=2, default=0.01)
+class Employee(User):
+    occupation = models.ForeignKey(
+        'Occupation', verbose_name='cargo', null=True, blank=True)
+    internal = models.BooleanField('interno', default=True)
+    commissioned = models.BooleanField('comissionado', default=True)
+    commission = models.DecimalField(
+        'comissão', max_digits=6, decimal_places=2, default=0.01)
 
-#     class Meta:
-#         ordering = ['username']
-#         verbose_name = 'funcionário'
-#         verbose_name_plural = 'funcionários'
+    class Meta:
+        ordering = ['username']
+        verbose_name = 'funcionário'
+        verbose_name_plural = 'funcionários'
 
-#     def __str__(self):
-#         return self.username
+    def __str__(self):
+        return self.username
 
 
 class Occupation(models.Model):
