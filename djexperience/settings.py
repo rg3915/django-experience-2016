@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'djexperience.sale',
     'djexperience.bookstore',
     'djexperience.crm',
+    'djexperience.product',
 ]
 
 MIDDLEWARE_CLASSES = [

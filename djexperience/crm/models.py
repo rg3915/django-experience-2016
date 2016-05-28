@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from djexperience.core.models import TimeStampedModel, Address
+from djexperience.product.models import TypeProduct
 from djexperience.utils.lists import GENDER, TREATMENT, PHONE_TYPE
 
 
@@ -79,6 +80,13 @@ class Employee(People, User):
         return self.username
 
 
+class PhoneEmployee(models.Model):
+    phone = models.CharField('telefone', max_length=20, blank=True)
+    employee = models.ForeignKey('Employee')
+    phone_type = models.CharField(
+        'tipo', max_length=3, choices=PHONE_TYPE, default='pri')
+
+
 class Occupation(models.Model):
     occupation = models.CharField('cargo', max_length=50, unique=True)
 
@@ -105,6 +113,19 @@ class Seller(Employee):
         proxy = True
         verbose_name = 'vendedor'
         verbose_name_plural = 'vendedores'
+
+    def __str__(self):
+        return self.username
+
+
+class Provider(Person):
+    type_product = models.ManyToManyField(
+        'product.TypeProduct', verbose_name='tipo de produto')
+
+    class Meta:
+        ordering = ['first_name']
+        verbose_name = 'fornecedor'
+        verbose_name_plural = 'fornecedores'
 
     def __str__(self):
         return self.first_name

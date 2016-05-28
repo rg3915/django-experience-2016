@@ -10,6 +10,55 @@ Veja em [tables_django.md][0] a relação de apps e tabelas usadas no projeto.
 * [multi-table-inheritance][2]
 * [proxy-models][3]
 
+### Core
+
+Base do projeto. Nele constam algumas tabelas abstratas como:
+
+* TimeStampedModel
+* Address
+
+### CRM
+
+Gerenciamento de pessoas, funcionários, clientes e fornecedores.
+
+#### Customer
+
+A tabela *Customer* é um *proxy model* de *Person*. Seu comportamento será dado pelo *person_type* igual a "customer".
+
+#### Employee
+
+A tabela *Employee* é herdada de *User*. Permitindo o acesso do funcionário ao sistema de login.
+
+#### Seller
+
+A tabela *Seller* é um *proxy model* de *Employee*. Seu comportamento será dado pelo *occupation* igual a "Vendedor".
+
+
+### Product
+
+Descrição dos produtos.
+
+### Selling
+
+Gerenciamento de vendas.
+
+### Buying
+
+Cria pedidos de compras.
+
+### Proposal
+
+Gerenciamento de orçamentos.
+
+### Stock
+
+Gerenciamento de estoque e recebimento de produtos.
+
+
+
+
+
+
 ## Modelos
 
 Para gerar o gráfico do modelo façamos o seguinte:
@@ -38,7 +87,7 @@ Eu criei um Makefile onde você pode digitar, por exemplo:
 make mer n="02"
 ```
 
-![mer](djexperience01.png)
+![mer](dj-exp03.png)
 
 ## Gerando dados randômicos
 
