@@ -1,5 +1,18 @@
 from django.contrib import admin
-from .models import Customer, Employee, Seller, Occupation
+from .models import Person, Occupation, PhonePerson, Customer, Employee, Seller
+
+
+class PhonePersonInline(admin.TabularInline):
+    model = PhonePerson
+    extra = 0
+
+
+@admin.register(Person)
+class PersonAdmin(admin.ModelAdmin):
+    inlines = [PhonePersonInline]
+    prepopulated_fields = {'slug': ('first_name', 'last_name')}
+    list_display = ('__str__', 'email', 'active')
+    search_fields = ('first_name', 'last_name')
 
 
 @admin.register(Employee)
