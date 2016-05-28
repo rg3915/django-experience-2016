@@ -38,6 +38,8 @@ Eu criei um Makefile onde você pode digitar, por exemplo:
 make mer n="02"
 ```
 
+![mer](djexperience01.png)
+
 ## Gerando dados randômicos
 
 ## Comandos personalizados
