@@ -29,3 +29,17 @@ PHONE_TYPE = (
     ('fax', 'fax'),
     ('o', 'outros'),
 )
+
+METHOD_PAID = (
+    ('vi', 'a vista'),
+    ('bo', 'boleto'),
+    ('ch', 'cheque'),
+    ('de', 'débito'),
+    ('cr', 'crédito'),
+)
+
+STATUS_LIST = (
+    ('c', 'cancelado'),
+    ('p', 'pendente'),
+    ('a', 'aprovado')
+)

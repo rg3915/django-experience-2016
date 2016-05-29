@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     'daterange_filter',
     'django_activeurl',
     # my apps
-    'djexperience.sale',
     'djexperience.bookstore',
     'djexperience.crm',
     'djexperience.product',

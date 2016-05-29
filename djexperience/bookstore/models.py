@@ -1,4 +1,6 @@
 from django.db import models
+from djexperience.core.models import TimeStampedModel
+from djexperience.utils.lists import STATUS_LIST, METHOD_PAID
 
 
 class Author(models.Model):
@@ -83,3 +85,28 @@ class Provider(People):
         ordering = ['first_name']
         verbose_name = 'fornecedor'
         verbose_name_plural = 'fornecedores'
+
+
+class Ordered(TimeStampedModel):
+    customer = models.ForeignKey('Customer', verbose_name='cliente')
+    status_ordered = models.CharField(
+        'status', max_length=2, choices=STATUS_LIST)
+
+    class Meta:
+        ordering = ['-created']
+        verbose_name = 'pedido'
+        verbose_name_plural = 'pedidos'
+
+
+class Sale(TimeStampedModel):
+    ordered = models.OneToOneField('Ordered', verbose_name='pedido')
+    paid = models.BooleanField('pago')
+    date_paid = models.DateField('data da pagamento')
+    method_paid = models.CharField(
+        'forma da pagamento', max_length=2, choices=METHOD_PAID)
+    deadline = models.CharField('prazo de entrega', max_length=50)
+
+    class Meta:
+        ordering = ['-created']
+        verbose_name = 'venda'
+        verbose_name_plural = 'vendas'

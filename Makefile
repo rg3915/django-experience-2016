@@ -9,7 +9,7 @@ delete_migrations:
 	rm -rf djexperience/sale/migrations
 
 migrate:
-	./manage.py makemigrations bookstore crm sale product
+	./manage.py makemigrations bookstore crm product
 	./manage.py migrate
 
 test:
