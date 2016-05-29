@@ -1,0 +1,15 @@
+PRODUCT_DICT = {
+    'imported': False,
+    'outofline': False,
+    'perishable': False,
+    'ncm': '30023142',
+    'product': 'Smart TV LED 40" Philco Ultra 4K',
+    'short_description': 'Smart TV LED 40" Philco Ultra 4K',
+    'description': 'Smart TV LED 40" Philco 40PUG6300 Ultra 4K Dual Core 4 HDMI 2 USB 840Hz',
+    'cost': 700.00,
+    'price': 1979.10,
+    'icms': 0.07,
+    'ipi': 0.1,
+    'stock_min': 2,
+    'stock': 5,
+}

@@ -24,3 +24,30 @@ class TypeProduct(models.Model):
 
     def __str__(self):
         return self.type_product
+
+
+class Product(models.Model):
+    imported = models.BooleanField('importado', default=False)
+    outofline = models.BooleanField('fora de linha', default=False)
+    perishable = models.BooleanField('perecível', default=False)
+    ncm = models.CharField('NCM', max_length=8)
+    brand = models.ForeignKey('Brand', verbose_name='marca')
+    product = models.CharField('produto', max_length=60, unique=True)
+    short_description = models.TextField('descrição curta', blank=True)
+    description = models.TextField('descrição completa', blank=True)
+    cost = models.DecimalField('custo', max_digits=6, decimal_places=2)
+    price = models.DecimalField('preço', max_digits=6, decimal_places=2)
+    icms = models.DecimalField(
+        'ICMS', max_digits=3, decimal_places=2, blank=True)
+    ipi = models.DecimalField(
+        'IPI', max_digits=3, decimal_places=2, blank=True)
+    stock_min = models.PositiveIntegerField('Estoque mínimo', default=0)
+    stock = models.IntegerField('Estoque atual')
+
+    class Meta:
+        ordering = ['product']
+        verbose_name = u'produto'
+        verbose_name_plural = u'produtos'
+
+    def __str__(self):
+        return self.product
