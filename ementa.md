@@ -40,7 +40,6 @@ O objetivo inicial é cumprir esta ementa:
 - [ ] Filtros com dois ou mais campos de listagem
 - [ ] Buscas múltiplas
   - [ ] Consultas avançadas, um template com vários campos de busca (por exemplo: nome, cidade, bairro, etc.)
-  - [ ] Resultado com paginação
 - [ ] Consumindo o DRF
 
 ## manager.py
