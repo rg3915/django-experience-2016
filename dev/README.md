@@ -87,7 +87,7 @@ Eu criei um Makefile onde você pode digitar, por exemplo:
 make mer n="02"
 ```
 
-![mer](dj-exp03.png)
+![mer](dj-exp04.png)
 
 ## Gerando dados randômicos
 
