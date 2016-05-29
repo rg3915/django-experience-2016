@@ -34,6 +34,31 @@ PERSON_DICT = {
     'blocked': False,
 }
 
+CUSTOMER_DICT = {
+    'gender': 'M',
+    'treatment': 'a',
+    'first_name': 'Mike',
+    'last_name': 'Smith',
+    'slug': 'mike-smith',
+    'birthday': '1942-06-01 00:00:01+00:00',
+    'company': 'Thompson',
+    'department': 'Arquitetura',
+    'email': 'm.smith@example.com',
+    'cpf': '92563474663',
+    'rg': '403289440',
+    'cnpj': '42238377000123',
+    'ie': 'isento',
+    'customer_type': 'a',
+    'address': 'Avenida Paulista, 1605',
+    'complement': 'Apto 42',
+    'district': 'Bela Vista',
+    'city': 'São Paulo',
+    'uf': 'SP',
+    'cep': '01311200',
+    'active': True,
+    'blocked': False,
+}
+
 EMPLOYEE_DICT = {
     'username': 'regis',
     'first_name': 'Regis',

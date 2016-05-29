@@ -106,18 +106,6 @@ class SellerManager(models.Manager):
             .filter(occupation__occupation='Vendedor')
 
 
-class Seller(Employee):
-    objects = SellerManager()
-
-    class Meta:
-        proxy = True
-        verbose_name = 'vendedor'
-        verbose_name_plural = 'vendedores'
-
-    def __str__(self):
-        return self.username
-
-
 class Provider(Person):
     type_product = models.ManyToManyField(
         'product.TypeProduct', verbose_name='tipo de produto')
@@ -129,3 +117,15 @@ class Provider(Person):
 
     def __str__(self):
         return self.first_name
+
+
+class Seller(Employee):
+    objects = SellerManager()
+
+    class Meta:
+        proxy = True
+        verbose_name = 'vendedor'
+        verbose_name_plural = 'vendedores'
+
+    def __str__(self):
+        return self.username
