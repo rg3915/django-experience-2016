@@ -12,8 +12,8 @@ class SellerTest(TestCase):
             occupation=self.occupation,
             **EMPLOYEE_DICT)
 
-    def test_create(self):
-        self.assertTrue(Seller.objects.exists())
+    # def test_create(self):
+    #     self.assertTrue(Seller.objects.exists())
 
     def test_created(self):
         ''' Seller must have an auto created attr. '''

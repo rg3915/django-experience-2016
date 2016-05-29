@@ -22,6 +22,8 @@ PERSON_DICT = {
     'email': 'regis@example.com',
     'cpf': '75873211795',
     'rg': '911225341',
+    'cnpj': '42238377000123',
+    'ie': 'isento',
     'address': 'Rua São Leopoldo, 101',
     'complement': 'Apto 303',
     'district': 'Belezinho',
