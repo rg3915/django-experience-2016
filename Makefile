@@ -5,10 +5,11 @@ delete_migrations:
 	rm db.sqlite3
 	rm -rf djexperience/bookstore/migrations
 	rm -rf djexperience/crm/migrations
+	rm -rf djexperience/product/migrations
 	rm -rf djexperience/sale/migrations
 
 migrate:
-	./manage.py makemigrations bookstore crm sale
+	./manage.py makemigrations bookstore crm sale product
 	./manage.py migrate
 
 test:
