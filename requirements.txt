@@ -14,3 +14,4 @@ python-decouple==3.0
 requests==2.10.0
 six==1.10.0
 static3==0.6.1
+pytz==2016.4

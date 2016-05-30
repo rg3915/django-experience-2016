@@ -184,6 +184,8 @@
 * num_awards (int)
 
 **Book (TimeStampedModel)**
+* imported (bool)
+* book_type (list)
 * isbn (int)
 * name
 * rating (float)

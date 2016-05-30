@@ -44,7 +44,7 @@ O objetivo inicial é cumprir esta ementa:
 
 ## manager.py
 
-- [ ] Dominando o Shell do Django
+- [x] [Dominando o Shell do Django](https://github.com/rg3915/django-experience/wiki/Dominando-o-shell-do-Django)
 - [ ] Importando dados de CSV
 - [ ] Inserindo dados randômicos
 
