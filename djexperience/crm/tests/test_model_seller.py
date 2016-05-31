@@ -7,13 +7,13 @@ from .data import EMPLOYEE_DICT
 class SellerTest(TestCase):
 
     def setUp(self):
-        self.occupation = Occupation.objects.create(occupation='Gerente')
+        self.occupation = Occupation.objects.create(occupation='Vendedor')
         self.obj = Seller.objects.create(
             occupation=self.occupation,
             **EMPLOYEE_DICT)
 
-    # def test_create(self):
-    #     self.assertTrue(Seller.objects.exists())
+    def test_create(self):
+        self.assertTrue(Seller.objects.exists())
 
     def test_created(self):
         ''' Seller must have an auto created attr. '''
