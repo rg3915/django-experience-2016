@@ -38,8 +38,8 @@ cd django-experience
 python -m venv .venv
 source .venv/bin/activate
 PS1="(`basename \"$VIRTUAL_ENV\"`):/\W$ " # opcional (insere nome do virtualenv no terminal)
-python -m pip install -r requirements.txt
-cp contrib/env-sample .env
+python -m pip install -r requirements/dev.txt
+python contrib/env_gen.py
 python manage.py migrate
 python manage.py test
 ```

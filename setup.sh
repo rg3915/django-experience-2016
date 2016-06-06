@@ -24,10 +24,10 @@ PS1="(`basename \"$VIRTUAL_ENV\"`)\e[1;34m:/\W\e[00m$ "
 sleep 2
 
 echo "${green}>>> Installing dependencies...${reset}"
-pip install -r requirements.txt
+pip install -r requirements/dev.txt
 
 echo "${green}>>> Creating .env${reset}"
-cp contrib/env-sample .env
+python contrib/env_gen.py
 
 echo "${green}>>> Running tests...${reset}"
 python manage.py test
