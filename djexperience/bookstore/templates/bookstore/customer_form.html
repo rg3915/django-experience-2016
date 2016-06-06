@@ -1,0 +1,17 @@
+{% extends "base_bookstore.html" %}
+
+{% block content %}
+  <div>
+    <h2>Cadastrar cliente</h2>
+    <form method="POST" action=".">
+      {% csrf_token %}
+      <ul class="errorlist nonfield"></ul>
+      {{ form.as_p }}
+      <div class="form-group">
+        <div>
+          <button type="submit" id="id_submit" class="btn btn-primary">Salvar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock content %}
