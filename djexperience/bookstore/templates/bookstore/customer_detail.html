@@ -1,0 +1,12 @@
+{% extends "base_bookstore.html" %}
+
+{% block content %}
+  <div>
+    <ul>
+      <li>Nome: {{ customer.full_name }}</li>
+      <li>Email: {{ customer.email }}</li>
+      <li>Nascimento: {{ customer.birthday }}</li>
+      <li>Ativo: {{ customer.active }}</li> 
+    </ul>
+  </div>
+{% endblock content %}

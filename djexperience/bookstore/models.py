@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import resolve_url as r
 from djexperience.core.models import TimeStampedModel
 from djexperience.utils.lists import STATUS_LIST, METHOD_PAID
 
@@ -79,6 +80,9 @@ class Customer(People):
         ordering = ['first_name']
         verbose_name = 'cliente'
         verbose_name_plural = 'clientes'
+
+    def get_absolute_url(self):
+        return r('bookstore:customer_detail', pk=self.pk)
 
 
 class Provider(People):
