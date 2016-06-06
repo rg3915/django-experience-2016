@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'daterange_filter',
     'django_activeurl',
+    'import_export',
     # my apps
     'djexperience.bookstore',
     'djexperience.crm',
