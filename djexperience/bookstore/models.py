@@ -33,6 +33,7 @@ class People(models.Model):
     last_name = models.CharField('sobrenome', max_length=50)
     email = models.EmailField()
     birthday = models.DateTimeField('nascimento', null=True, blank=True)
+    active = models.BooleanField('ativo', default=True)
 
     class Meta:
         ordering = ['first_name']
