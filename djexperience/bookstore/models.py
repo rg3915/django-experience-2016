@@ -32,6 +32,7 @@ class People(models.Model):
     first_name = models.CharField('nome', max_length=50)
     last_name = models.CharField('sobrenome', max_length=50)
     email = models.EmailField()
+    birthday = models.DateTimeField('nascimento', null=True, blank=True)
 
     class Meta:
         ordering = ['first_name']
