@@ -29,7 +29,7 @@ O objetivo inicial é cumprir esta ementa:
   - [x] [Extendendo a classe User](https://github.com/rg3915/django-experience/issues/21)
 - [x] Herança de templates
 - [ ] CRUD
-  - [ ] Function Based Views
+  - [x] [Function Based Views](https://github.com/rg3915/django-experience/issues/26)
   - [ ] Class Based Views
 - [ ] Mixins
 - [ ] Managers
