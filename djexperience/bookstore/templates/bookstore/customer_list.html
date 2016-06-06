@@ -1,0 +1,74 @@
+{% extends "base_bookstore.html" %}
+
+{% block title %}
+    <title>Customer List</title>
+{% endblock title %}
+
+{% block content %}
+
+    <form class="navbar-form navbar-right" action="." method="get">
+        <!-- add -->
+        <a href="#">
+            <button id="new_register" type="button" class="btn btn-primary">
+                <span class="glyphicon glyphicon-plus"></span> Adicionar
+            </button>
+        </a>
+        <!-- search form -->
+        <div class="form-group">
+            <input id="search_box" name="search_box" type="text" placeholder="Localizar..." class="form-control">
+            <button type="submit" class="btn btn-success form-control"><span class="glyphicon glyphicon-search"></span></button>
+        </div>
+    </form>
+
+    <h1>Lista de Clientes</h1>
+
+    <div>
+        {% if customers %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Nascimento</th>
+                        <th class="text-center">Ativo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for customer in customers %}
+                    <tr>
+                        <td><a href="{{ customer.get_absolute_url }}">{{ customer.full_name }}</a></td>
+                        <td>{{ customer.email }}</td>
+                        <td>{{ customer.birthday|date:"d/m/Y" }}</td>
+                        
+                        <td class="text-center">
+                            {% if customer.active %}
+                                <span class="glyphicon glyphicon-ok-sign" style="color: #44AD41"></span>
+                            {% else %}
+                                <span class="glyphicon glyphicon-minus-sign" style="color: #DE2121"></span>
+                            {% endif %}
+                        </td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="alert alert-warning">Sem itens na lista.</p>
+        {% endif %}
+    </div>
+
+    <hr>
+    <div>
+        <h3><b>Total:</b> {{ count }}
+            {% if count <= 1 %}
+                {{ name }}
+            {% else %}
+                {{ name_plural }}
+            {% endif %}
+        </h3>
+    </div>
+
+
+<!-- pagination -->
+
+{% endblock content %}

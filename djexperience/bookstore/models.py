@@ -41,7 +41,9 @@ class People(models.Model):
         verbose_name_plural = 'pessoas'
 
     def __str__(self):
-        return self.first_name
+        return ' '.join(filter(None, [self.first_name, self.last_name]))
+
+    full_name = property(__str__)
 
 
 class PF(People):
