@@ -19,5 +19,5 @@ EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
 """.strip()
 
 # Writing our configuration file to '.env'
-with open('.env2', 'w') as configfile:
+with open('.env', 'w') as configfile:
     configfile.write(CONFIG_STRING)
