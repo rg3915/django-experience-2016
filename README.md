@@ -40,8 +40,21 @@ source .venv/bin/activate
 PS1="(`basename \"$VIRTUAL_ENV\"`):/\W$ " # opcional (insere nome do virtualenv no terminal)
 python -m pip install -r requirements/dev.txt
 python contrib/env_gen.py
+python manage.py makemigrations bookstore crm product
 python manage.py migrate
 python manage.py test
+```
+
+**Atenção:** caso dê problemas na migração, como ainda estamos em fase de testes, você pode excluir suas migrações locais
+
+```bash
+make delete_migrations
+```
+
+E depois digitar
+
+```bash
+make migrate
 ```
 
 ## Como fazer o deploy
