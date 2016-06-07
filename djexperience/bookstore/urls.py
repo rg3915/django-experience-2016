@@ -1,9 +1,12 @@
-from django.conf.urls import url
+from django.conf.urls import include, url
 from .views import customer_list, customer_detail, customer_form
 
+customer_patterns = [
+    url(r'^$', customer_list, name='customer_list'),
+    url(r'^(?P<pk>\d+)/$', customer_detail, name='customer_detail'),
+    url(r'^add/$', customer_form, name='customer_add'),
+]
+
 urlpatterns = [
-    url(r'^customer_list', customer_list, name='customer_list'),
-    url(r'^customer_detail/(?P<pk>\d+)/',
-        customer_detail, name='customer_detail'),
-    url(r'^customer/add/', customer_form, name='customer_add'),
+    url(r'^customer/', include(customer_patterns)),
 ]

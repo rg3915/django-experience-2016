@@ -34,4 +34,4 @@ def create(request):
         return render(request, 'bookstore/customer_form.html', {'form': form})
 
     obj = form.save()
-    return HttpResponseRedirect('/bookstore/customer_detail/%d/' % obj.pk)
+    return HttpResponseRedirect('/bookstore/customer/%d/' % obj.pk)
