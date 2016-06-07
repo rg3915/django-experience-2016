@@ -1,5 +1,4 @@
 from django.test import TestCase
-from django.utils import timezone
 from django.shortcuts import resolve_url as r
 from djexperience.bookstore.forms import CustomerForm
 from djexperience.bookstore.models import Customer
@@ -47,7 +46,7 @@ class CustomerAddPostValid(TestCase):
             first_name='Adam',
             last_name='Smith',
             email='adam@example.com',
-            birthday=timezone.now()
+            birthday='2006-10-25 14:30:59'
         )
         self.resp = self.client.post(r('bookstore:customer_add'), data)
 
