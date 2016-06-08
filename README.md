@@ -57,6 +57,13 @@ E depois digitar
 make migrate
 ```
 
+### Usando o setup.py
+
+```bash
+wget https://raw.githubusercontent.com/rg3915/django-experience/master/setup.sh
+source setup.sh
+```
+
 ## Como fazer o deploy
 
 ## Changelog
