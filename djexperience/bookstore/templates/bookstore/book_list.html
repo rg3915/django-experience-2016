@@ -1,6 +1,23 @@
 {% extends "base_bookstore.html" %}
 
 {% block content %}
+
+    <form class="navbar-form navbar-right" action="." method="get">
+        <!-- add -->
+        <a href="{% url 'bookstore:book_add' %}">
+            <button id="new_register" type="button" class="btn btn-primary">
+                <span class="glyphicon glyphicon-plus"></span> Adicionar
+            </button>
+        </a>
+        <!-- search form -->
+        <div class="form-group">
+            <input id="search_box" name="search_box" type="text" placeholder="Localizar..." class="form-control">
+            <button type="submit" class="btn btn-success form-control"><span class="glyphicon glyphicon-search"></span></button>
+        </div>
+    </form>
+
+    <h1>Lista de Livros</h1>
+
   {% if books %}
     <table class="table table-striped">
       <thead>

@@ -5,6 +5,7 @@ from django.views.generic.edit import UpdateView
 from django.shortcuts import render, get_object_or_404
 from .models import Customer, Book
 from .forms import CustomerForm, BookForm
+from .mixins import NameSearchMixin
 
 
 def home(request):
@@ -50,7 +51,7 @@ def create(request):
     return HttpResponseRedirect('/bookstore/customer/%d/' % obj.pk)
 
 
-class BookList(ListView):
+class BookList(NameSearchMixin, ListView):
     model = Book
     context_object_name = 'books'
     paginate_by = 10

@@ -31,7 +31,7 @@ O objetivo inicial é cumprir esta ementa:
 - [x] CRUD
   - [x] [Function Based Views](https://github.com/rg3915/django-experience/issues/26)
   - [x] [Class Based Views](https://github.com/rg3915/django-experience/issues/33)
-- [ ] Mixins
+- [x] [Mixins](https://github.com/rg3915/django-experience/issues/35)
 - [ ] Managers
 - [ ] Custom template tags
 - [ ] Várias formas de se fazer um formulário
