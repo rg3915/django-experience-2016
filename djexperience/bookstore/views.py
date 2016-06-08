@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from .models import Customer
@@ -9,7 +10,13 @@ def home(request):
 
 
 def customer_list(request):
-    customers = Customer.objects.all()
+    q = request.GET.get('search_box')
+    if q:
+        customers = Customer.objects.filter(
+            Q(first_name__icontains=q) |
+            Q(last_name__icontains=q))
+    else:
+        customers = Customer.objects.all()
     context = {'customers': customers}
     return render(request, 'bookstore/customer_list.html', context)
 
