@@ -4,6 +4,10 @@ from .models import Customer
 from .forms import CustomerForm
 
 
+def home(request):
+    return render(request, 'bookstore_index.html')
+
+
 def customer_list(request):
     customers = Customer.objects.all()
     context = {'customers': customers}

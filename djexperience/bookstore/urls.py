@@ -1,5 +1,5 @@
 from django.conf.urls import include, url
-from .views import customer_list, customer_detail, customer_form
+from .views import home, customer_list, customer_detail, customer_form
 
 customer_patterns = [
     url(r'^$', customer_list, name='customer_list'),
@@ -8,5 +8,6 @@ customer_patterns = [
 ]
 
 urlpatterns = [
+    url(r'^$', home, name='bookstore_index'),
     url(r'^customer/', include(customer_patterns)),
 ]
