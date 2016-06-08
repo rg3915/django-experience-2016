@@ -28,6 +28,9 @@ class Book(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return r('bookstore:book_detail', pk=self.pk)
+
 
 class People(models.Model):
     first_name = models.CharField('nome', max_length=50)

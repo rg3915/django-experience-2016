@@ -1,0 +1,27 @@
+{% extends "base_bookstore.html" %}
+
+{% block content %}
+  {% if books %}
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Livro</th>
+          <th>Autores</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for book in books %}
+          <tr>
+            <td><a href="{{ book.get_absolute_url }}">{{ book.name }}</a></td>
+            <td>{{ book.authors }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+  {% else %}
+    <p class="alert alert-warning">Sem itens na lista.</p>
+  {% endif %}
+
+{% include "includes/pagination.html" %}
+
+{% endblock content %}

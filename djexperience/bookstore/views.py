@@ -1,8 +1,10 @@
 from django.db.models import Q
 from django.http import HttpResponseRedirect
+from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic.edit import UpdateView
 from django.shortcuts import render, get_object_or_404
-from .models import Customer
-from .forms import CustomerForm
+from .models import Customer, Book
+from .forms import CustomerForm, BookForm
 
 
 def home(request):
@@ -46,3 +48,24 @@ def create(request):
 
     obj = form.save()
     return HttpResponseRedirect('/bookstore/customer/%d/' % obj.pk)
+
+
+class BookList(ListView):
+    model = Book
+    context_object_name = 'books'
+    paginate_by = 10
+
+
+class BookDetail(DetailView):
+    model = Book
+    context_object_name = 'book'
+
+
+class BookCreate(CreateView):
+    model = Book
+    form_class = BookForm
+
+
+class BookUpdate(UpdateView):
+    model = Book
+    form_class = BookForm

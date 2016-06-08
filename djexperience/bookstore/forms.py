@@ -1,5 +1,5 @@
 from django import forms
-from .models import Customer
+from .models import Customer, Book
 
 
 class CustomerForm(forms.ModelForm):
@@ -21,3 +21,10 @@ class CustomerForm(forms.ModelForm):
         words = list(map(lambda w: w.capitalize()
                          if not w in prepositions else w, last_name.split()))
         return ' '.join(words)
+
+
+class BookForm(forms.ModelForm):
+
+    class Meta:
+        model = Book
+        fields = ['name', 'authors']
