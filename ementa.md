@@ -28,9 +28,9 @@ O objetivo inicial é cumprir esta ementa:
   - [x] [Proxy models](dev/orm#proxy-models)
   - [x] [Extendendo a classe User](https://github.com/rg3915/django-experience/issues/21)
 - [x] Herança de templates
-- [ ] CRUD
+- [x] CRUD
   - [x] [Function Based Views](https://github.com/rg3915/django-experience/issues/26)
-  - [ ] Class Based Views
+  - [x] [Class Based Views](https://github.com/rg3915/django-experience/issues/33)
 - [ ] Mixins
 - [ ] Managers
 - [ ] Custom template tags
