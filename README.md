@@ -64,9 +64,6 @@ wget https://raw.githubusercontent.com/rg3915/django-experience/master/setup.sh
 source setup.sh
 ```
 
-## Como fazer o deploy
-
-## Changelog
 
 [0]: https://www.djangoproject.com/
 [1]: https://github.com/rg3915/django-experience/blob/master/ementa.md
