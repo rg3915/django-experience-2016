@@ -29,6 +29,10 @@ pip install -r requirements/dev.txt
 echo "${green}>>> Creating .env${reset}"
 python contrib/env_gen.py
 
+echo "${green}>>> Running migrations...${reset}"
+python manage.py makemigrations bookstore crm product
+python manage.py migrate
+
 echo "${green}>>> Running tests...${reset}"
 python manage.py test
 
