@@ -2,6 +2,7 @@ from django.db import models
 from django.shortcuts import resolve_url as r
 from djexperience.core.models import TimeStampedModel
 from djexperience.utils.lists import STATUS_LIST, METHOD_PAID
+from .managers import PublishedManager
 
 
 class Author(models.Model):
@@ -19,6 +20,9 @@ class Author(models.Model):
 class Book(models.Model):
     name = models.CharField('nome', max_length=50)
     authors = models.ManyToManyField('Author', verbose_name='autores')
+    published = models.BooleanField('publicado', default=True)
+    # add our custom model manager
+    objects = PublishedManager()
 
     class Meta:
         ordering = ['name']

@@ -56,6 +56,11 @@ class BookList(NameSearchMixin, ListView):
     context_object_name = 'books'
     paginate_by = 10
 
+    def get_context_data(self, **kwargs):
+        context = super(BookList, self).get_context_data(**kwargs)
+        context['count_published'] = Book.objects.published().count()
+        return context
+
 
 class BookDetail(DetailView):
     model = Book
