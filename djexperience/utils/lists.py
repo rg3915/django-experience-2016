@@ -43,3 +43,8 @@ STATUS_LIST = (
     ('p', 'pendente'),
     ('a', 'aprovado')
 )
+
+PERSON_TYPE = (
+    ('c', 'cliente'),
+    ('p', 'contato'),
+)

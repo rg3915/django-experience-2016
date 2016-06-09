@@ -1,8 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from djexperience.core.models import TimeStampedModel, Address
-from djexperience.product.models import TypeProduct
-from djexperience.utils.lists import GENDER, TREATMENT, PHONE_TYPE
+from djexperience.utils.lists import GENDER, TREATMENT, PHONE_TYPE, PERSON_TYPE
+from .managers import CustomerManager
 
 
 class People(TimeStampedModel, Address):
@@ -37,6 +37,8 @@ class Person(People):
     email = models.EmailField(null=True, blank=True)
     occupation = models.ForeignKey(
         'Occupation', verbose_name='cargo', null=True, blank=True)
+    person_type = models.CharField(
+        'tipo de pessoa', max_length=1, choices=PERSON_TYPE, default='p')
 
     class Meta:
         ordering = ['first_name']
@@ -55,11 +57,15 @@ class PhonePerson(models.Model):
 
 
 class Customer(Person):
-    pass
+    objects = CustomerManager()
 
     class Meta:
+        proxy = True
         verbose_name = 'cliente'
         verbose_name_plural = 'clientes'
+
+    def get_absolute_url(self):
+        return r('crm:customer_detail', slug=self.slug)
 
 
 class Employee(People, User):

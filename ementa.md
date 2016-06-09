@@ -32,7 +32,7 @@ O objetivo inicial é cumprir esta ementa:
   - [x] [Function Based Views](https://github.com/rg3915/django-experience/issues/26)
   - [x] [Class Based Views](https://github.com/rg3915/django-experience/issues/33)
 - [x] [Mixins](https://github.com/rg3915/django-experience/issues/35)
-- [ ] Managers
+- [x] [Managers](https://github.com/rg3915/django-experience/issues/36)
 - [ ] Custom template tags
 - [ ] Várias formas de se fazer um formulário
 - [ ] Inlineformset_factory
