@@ -19,7 +19,7 @@ O objetivo inicial é cumprir esta ementa:
 
 ## Backend
 
-- [ ] Entendendo os modelos do Django
+- [x] Entendendo os modelos do Django
   - [x] [One to One](dev/orm#one-to-one-um-para-um)
   - [x] [One to Many](dev/orm#one-to-many-um-para-muitos)
   - [x] [Many to Many](dev/orm#many-to-many-muitos-para-muitos)
