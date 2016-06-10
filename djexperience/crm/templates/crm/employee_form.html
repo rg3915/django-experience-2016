@@ -1,10 +1,12 @@
-{% extends "base_bookstore.html" %}
+{% extends "base.html" %}
+
 {% load widget_tweaks %}
 
+{% block title %}Registration{% endblock title %}
 {% block content %}
 
 <div class="page-header">
-  <h2>Cadastrar Livros</h2>
+  <h2>Cadastre-se</h2>
 </div>
 
 <form class="form-horizontal" action="." method="POST">
@@ -13,32 +15,32 @@
   {{ form.non_fields_errors }}
   <div class="form-group">
     <label class="control-label col-sm-2 col-lg-2">
-      {{ form.name.label }}
+      {{ form.username.label }}
     </label>
     <div class="col-sm-4 col-lg-4">
-      {{ form.name|attr:"class:form-control" }} {{ form.name.errors }}
+      {{ form.username|attr:"class:form-control" }} {{ form.username.errors }}
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-sm-2 col-lg-2">
-      {{ form.authors.label }}
+      {{ form.email.label }}
     </label>
     <div class="col-sm-4 col-lg-4">
-      {{ form.authors|attr:"class:form-control" }} {{ form.authors.errors }}
+      {{ form.email|attr:"class:form-control" }} {{ form.email.errors }}
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-sm-2 col-lg-2">
-      {{ form.published.label }}
+      {{ form.password.label }}
     </label>
     <div class="col-sm-4 col-lg-4 controls">
-      {{ form.published|attr:"class:form-control" }} {{ form.published.errors }}
+      {{ form.password|attr:"class:form-control" }} {{ form.password.errors }}
     </div>
   </div>
 
   <div class="form-group">
       <div class="col-sm-2 col-sm-offset-2">
-        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="submit" class="btn btn-primary">Cadastrar-se</button>
       </div>
     </div>
 </form>

@@ -1,4 +1,6 @@
 -r base.txt
 ipython
+django-bootstrap-form==3.2
 django-debug-toolbar==1.4
+django-widget-tweaks==1.4.1
 selenium==2.53.2

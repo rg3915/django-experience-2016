@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # thirty apps
     'django_extensions',
+    'bootstrapform',
     'widget_tweaks',
     'daterange_filter',
     'django_activeurl',

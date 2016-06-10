@@ -47,4 +47,5 @@ STATUS_LIST = (
 PERSON_TYPE = (
     ('c', 'cliente'),
     ('p', 'contato'),
+    ('f', 'fornecedor'),
 )
