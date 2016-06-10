@@ -34,7 +34,7 @@ O objetivo inicial é cumprir esta ementa:
 - [x] [Mixins](https://github.com/rg3915/django-experience/issues/35)
 - [x] [Managers](https://github.com/rg3915/django-experience/issues/36)
 - [x] [Custom template tags](https://github.com/rg3915/django-experience/issues/19)
-- [x] Várias formas de se fazer um formulário
+- [x] [Várias formas de se fazer um formulário](https://github.com/rg3915/django-experience/wiki/V%C3%A1rias-formas-de-se-fazer-um-formul%C3%A1rio)
 - [ ] Inlineformset_factory
 - [ ] Aggregate and Annotate
 - [ ] Filtros com dois ou mais campos de listagem
