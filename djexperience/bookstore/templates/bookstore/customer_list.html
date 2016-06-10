@@ -1,4 +1,6 @@
 {% extends "base_bookstore.html" %}
+{% load crypto_tags %}
+{% load active_tags %}
 
 {% block title %}Bookstore | Customer List{% endblock title %}
 
@@ -34,18 +36,10 @@
                 <tbody>
                 {% for customer in customers %}
                     <tr>
-                        <td><a href="{{ customer.get_absolute_url }}">{{ customer.full_name }}</a></td>
-                        <td>{{ customer.email }}</td>
-                        <td>{{ customer.birthday|date:"d/m/Y" }}</td>
-                        
-                        <td class="text-center">
-                            {% if customer.active %}
-                                <span class="glyphicon glyphicon-ok-sign" style="color: #44AD41"></span>
-                            {% else %}
-                                <span class="glyphicon glyphicon-minus-sign" style="color: #DE2121"></span>
-                            {% endif %}
-                        </td>
-
+                        <td><a href="{{ customer.get_absolute_url }}">{{ customer.full_name|crypto }}</a></td>
+                        <td>{{ customer.email|default:"---" }}</td>
+                        <td>{{ customer.birthday|date:"d/m/Y"|default:"---" }}</td>
+                        <td class="text-center">{{ customer.active|active_tag }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -57,13 +51,7 @@
 
     <hr>
     <div>
-        <h3><b>Total:</b> {{ count }}
-            {% if count <= 1 %}
-                {{ name }}
-            {% else %}
-                {{ name_plural }}
-            {% endif %}
-        </h3>
+        <h3><b>Total:</b> {{ customers|length }} cliente{{ customers|length|pluralize }}</h3>
     </div>
 
 
