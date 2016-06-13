@@ -2,37 +2,31 @@
 
 {% block content %}
 
-    <form class="navbar-form navbar-right" action="." method="get">
-        <!-- add -->
-        <a href="{% url 'bookstore:book_add' %}">
-            <button id="new_register" type="button" class="btn btn-primary">
-                <span class="glyphicon glyphicon-plus"></span> Adicionar
-            </button>
-        </a>
-        <!-- search form -->
-        <div class="form-group">
-            <input id="search_box" name="search_box" type="text" placeholder="Localizar..." class="form-control">
-            <button type="submit" class="btn btn-success form-control"><span class="glyphicon glyphicon-search"></span></button>
-        </div>
-    </form>
-
     <h1>Lista de Livros</h1>
 
     <p>Livros publicados: {{ count_published }}</p>
 
   {% if books %}
-    <table class="table table-striped">
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
       <thead>
         <tr>
-          <th>Livro</th>
-          <th>Autores</th>
+        <th class="mdl-data-table__cell--non-numeric">Livro</th>
+        <th class="mdl-data-table__cell--non-numeric">Autor</th>
         </tr>
       </thead>
       <tbody>
         {% for book in books %}
           <tr>
-            <td><a href="{{ book.get_absolute_url }}">{{ book.name }}</a></td>
-            <td>{{ book.authors }}</td>
+            <td class="mdl-data-table__cell--non-numeric">{{ book.name }}</td>
+            <td class="mdl-data-table__cell--non-numeric">
+              {% if book.authors.all.count == 1 %}
+                {% for author in book.authors.all %}
+                  {{ author.name }}
+                {% endfor %}
+              {% else %}
+                  <a href="">vários autores</a>
+              {% endif %}
+            </td>
           </tr>
         {% endfor %}
       </tbody>
