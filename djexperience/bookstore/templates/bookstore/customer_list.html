@@ -1,4 +1,4 @@
-{% extends "base_bookstore.html" %}
+{% extends "base_bookstore_nav.html" %}
 {% load crypto_tags %}
 {% load active_tags %}
 
@@ -6,55 +6,46 @@
 
 {% block content %}
 
-    <form class="navbar-form navbar-right" action="." method="get">
-        <!-- add -->
-        <a href="{% url 'bookstore:customer_add' %}">
-            <button id="new_register" type="button" class="btn btn-primary">
-                <span class="glyphicon glyphicon-plus"></span> Adicionar
-            </button>
-        </a>
-        <!-- search form -->
-        <div class="form-group">
-            <input id="search_box" name="search_box" type="text" placeholder="Localizar..." class="form-control">
-            <button type="submit" class="btn btn-success form-control"><span class="glyphicon glyphicon-search"></span></button>
+  <h2>Lista de Clientes
+    <a href="{% url 'bookstore:customer_add' %}">
+      <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
+        <i class="material-icons" role="presentation">add</i>
+        <span class="visuallyhidden">Add</span>
+      </button>
+    </a>
+  </h2>
+
+  {% if customers %}
+    <div class="mdl-grid">
+      <div class="mdl-layout-spacer"></div>
+        <div class="mdl-cell mdl-cell--4-col">
+          <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+            <thead>
+              <tr>
+                <th class="mdl-data-table__cell--non-numeric">Nome</th>
+                <th class="mdl-data-table__cell--non-numeric">Email</th>
+                <th class="mdl-data-table__cell--non-numeric">Nascimento</th>
+                <th class="mdl-data-table__cell--non-numeric">Ativo</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for customer in customers %}
+                <tr>
+                  <td class="mdl-data-table__cell--non-numeric"><a href="{{ customer.get_absolute_url }}">{{ customer.full_name|crypto }}</a></td>
+                  <td class="mdl-data-table__cell--non-numeric">{{ customer.email|default:"---" }}</td>
+                  <td class="mdl-data-table__cell--non-numeric">{{ customer.birthday|date:"d/m/Y"|default:"---" }}</td>
+                  <td class="mdl-data-table__cell--non-numeric">{{ customer.active|active_tag }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
         </div>
-    </form>
-
-    <h1>Lista de Clientes</h1>
-
-    <div>
-        {% if customers %}
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Nascimento</th>
-                        <th class="text-center">Ativo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {% for customer in customers %}
-                    <tr>
-                        <td><a href="{{ customer.get_absolute_url }}">{{ customer.full_name|crypto }}</a></td>
-                        <td>{{ customer.email|default:"---" }}</td>
-                        <td>{{ customer.birthday|date:"d/m/Y"|default:"---" }}</td>
-                        <td class="text-center">{{ customer.active|active_tag }}</td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        {% else %}
-            <p class="alert alert-warning">Sem itens na lista.</p>
-        {% endif %}
+      <div class="mdl-layout-spacer"></div>
     </div>
+  {% else %}
+    <p class="alert alert-warning">Sem itens na lista.</p>
+  {% endif %}
 
-    <hr>
-    <div>
-        <h3><b>Total:</b> {{ customers|length }} cliente{{ customers|length|pluralize }}</h3>
-    </div>
-
-
-<!-- pagination -->
+{% include "includes/pagination.html" %}
 
 {% endblock content %}

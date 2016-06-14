@@ -1,36 +1,51 @@
-{% extends "base_bookstore.html" %}
+{% extends "base_bookstore_nav.html" %}
+
+{% block title %}Bookstore | Customer List{% endblock title %}
 
 {% block content %}
 
-    <h1>Lista de Livros</h1>
+  <h2>Lista de Livros
+    <a href="{% url 'bookstore:book_add' %}">
+      <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
+        <i class="material-icons" role="presentation">add</i>
+        <span class="visuallyhidden">Add</span>
+      </button>
+    </a>
+  </h2>
 
-    <p>Livros publicados: {{ count_published }}</p>
+  <p>Livros publicados: {{ count_published }}</p>
 
   {% if books %}
-    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-      <thead>
-        <tr>
-        <th class="mdl-data-table__cell--non-numeric">Livro</th>
-        <th class="mdl-data-table__cell--non-numeric">Autor</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for book in books %}
-          <tr>
-            <td class="mdl-data-table__cell--non-numeric">{{ book.name }}</td>
-            <td class="mdl-data-table__cell--non-numeric">
-              {% if book.authors.all.count == 1 %}
-                {% for author in book.authors.all %}
-                  {{ author.name }}
-                {% endfor %}
-              {% else %}
-                  <a href="">vários autores</a>
-              {% endif %}
-            </td>
-          </tr>
-        {% endfor %}
-      </tbody>
-  </table>
+    <div class="mdl-grid">
+      <div class="mdl-layout-spacer"></div>
+        <div class="mdl-cell mdl-cell--4-col">
+          <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+            <thead>
+              <tr>
+                <th class="mdl-data-table__cell--non-numeric">Livro</th>
+                <th class="mdl-data-table__cell--non-numeric">Autor</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for book in books %}
+                <tr>
+                  <td class="mdl-data-table__cell--non-numeric">{{ book.name }}</td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    {% if book.authors.all.count == 1 %}
+                      {% for author in book.authors.all %}
+                        {{ author.name }}
+                      {% endfor %}
+                    {% else %}
+                      <a href="">vários autores</a>
+                    {% endif %}
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      <div class="mdl-layout-spacer"></div>
+    </div>
   {% else %}
     <p class="alert alert-warning">Sem itens na lista.</p>
   {% endif %}

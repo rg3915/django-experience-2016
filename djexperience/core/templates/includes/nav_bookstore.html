@@ -1,26 +1,70 @@
-{% load activeurl %}
+{% load static %}
 
-<header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
-  <div class="mdl-layout__header-row">
-    <span class="mdl-layout-title"><a href="{% url 'core:home' %}">Django Experience</a></span>
-    <div class="mdl-layout-spacer"></div>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-      <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-        <a href="{% url 'bookstore:book_add' %}"><i class="material-icons">add</i></a>
-      </label>
-      <div class="mdl-textfield__expandable-holder">
-        <input class="mdl-textfield__input" type="text" id="search" />
-        <label class="mdl-textfield__label" for="search">Enter your query...</label>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+      <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row">
+          <span class="android-title mdl-layout-title">
+            <a href="{% url 'bookstore:bookstore_index' %}"><img class="android-logo-image" src="{% static "img/django-logo-experience.png" %}"></a>
+          </span>
+          <!-- Add spacer, to align navigation to the right in desktop -->
+          <div class="android-header-spacer mdl-layout-spacer"></div>
+          <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search-field">
+            </div>
+          </div>
+          <!-- Navigation -->
+          <div class="android-navigation-container">
+            <nav class="android-navigation mdl-navigation">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="{% url 'bookstore:book_list' %}">Livros</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="{% url 'bookstore:customer_list' %}">Clientes</a>
+            </nav>
+          </div>
+          <span class="android-mobile-title mdl-layout-title">
+            <a href="{% url 'bookstore:bookstore_index' %}"><img class="android-logo-image" src="{% static "img/django-logo-experience.png" %}"></a>
+          </span>
+          <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+            <li class="mdl-menu__item">5.0 Lollipop</li>
+            <li class="mdl-menu__item">4.4 KitKat</li>
+            <li disabled class="mdl-menu__item">4.3 Jelly Bean</li>
+            <li class="mdl-menu__item">Android History</li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-      <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-        <i class="material-icons">search</i>
-      </label>
-      <div class="mdl-textfield__expandable-holder">
-        <input class="mdl-textfield__input" type="text" id="search" />
-        <label class="mdl-textfield__label" for="search">Enter your query...</label>
+
+      <div class="android-drawer mdl-layout__drawer">
+        <span class="mdl-layout-title">
+          <a href="{% url 'bookstore:bookstore_index' %}"><img class="android-logo-image" src="{% static "img/django-logo-experience.png" %}"></a>
+        </span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="{% url 'bookstore:book_list' %}">Livros</a>
+          <a class="mdl-navigation__link" href="{% url 'bookstore:customer_list' %}">Clientes</a>
+          <div class="android-drawer-separator"></div>
+          <span class="mdl-navigation__link" href="">Versions</span>
+          <a class="mdl-navigation__link" href="">Lollipop 5.0</a>
+          <a class="mdl-navigation__link" href="">KitKat 4.4</a>
+          <a class="mdl-navigation__link" href="">Jelly Bean 4.3</a>
+          <a class="mdl-navigation__link" href="">Android history</a>
+          <div class="android-drawer-separator"></div>
+          <span class="mdl-navigation__link" href="">For developers</span>
+          <a class="mdl-navigation__link" href="">App developer resources</a>
+          <a class="mdl-navigation__link" href="">Android Open Source Project</a>
+          <a class="mdl-navigation__link" href="">Android SDK</a>
+        </nav>
       </div>
+
+      <div class="android-content mdl-layout__content">
+        <a name="top"></a>
+        <div class="android-screen-section mdl-typography--text-center">
+          <a name="screens"></a>
+        </div>
+      </div>
+
     </div>
-  </div>
-</header>
