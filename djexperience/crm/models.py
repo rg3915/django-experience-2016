@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.shortcuts import resolve_url as r
 from djexperience.core.models import TimeStampedModel, Address
 from djexperience.utils.lists import GENDER, TREATMENT, PHONE_TYPE
 from djexperience.utils.lists import PERSON_TYPE, CUSTOMER_TYPE
@@ -69,8 +70,8 @@ class Customer(Person):
         verbose_name = 'cliente'
         verbose_name_plural = 'clientes'
 
-    # def get_absolute_url(self):
-    #     return r('crm:customer_detail', slug=self.slug)
+    def get_absolute_url(self):
+        return r('crm:customer_detail', slug=self.slug)
 
 
 class Employee(People, User):

@@ -7,6 +7,7 @@ employee_patterns = [
 
 customer_patterns = [
     url(r'^$', c.CustomerList.as_view(), name='customer_list'),
+    url(r'^(?P<slug>[\w-]+)/$', c.customer_detail, name='customer_detail'),
 ]
 
 provider_patterns = [

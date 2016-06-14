@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DetailView
 from .models import Provider, Customer
 from .forms import EmployeeForm, ProviderForm
 
@@ -21,6 +21,9 @@ def employee_create(request):
 
 class CustomerList(ListView):
     model = Customer
+
+
+customer_detail = DetailView.as_view(model=Customer)
 
 
 class ProviderCreate(CreateView):
