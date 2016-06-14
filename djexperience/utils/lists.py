@@ -49,3 +49,9 @@ PERSON_TYPE = (
     ('p', 'contato'),
     ('f', 'fornecedor'),
 )
+
+CUSTOMER_TYPE = (
+    ('c', 'construtora'),
+    ('a', 'arquitetura'),
+    ('p', 'particular')
+)

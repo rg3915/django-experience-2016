@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import CreateView
-from .models import Provider
+from django.views.generic import CreateView, ListView
+from .models import Provider, Customer
 from .forms import EmployeeForm, ProviderForm
 
 
@@ -17,6 +17,10 @@ def employee_create(request):
     else:
         form = EmployeeForm()
     return render(request, 'crm/employee_form.html', {'form': form})
+
+
+class CustomerList(ListView):
+    model = Customer
 
 
 class ProviderCreate(CreateView):

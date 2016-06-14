@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}
+  <title>Clientes</title>
+{% endblock title %}
+
+{% block content %}
+
+<form class="navbar-form navbar-right" action="." method="get">
+<!-- add -->
+<a href="{ url 'crm:customer_add' %}">
+  <button id="new_customer" type="button" class="btn btn-primary">
+    <span class="glyphicon glyphicon-plus"></span> Adicionar
+  </button>
+</a>
+<!-- search form -->
+<div class="form-group">
+  <input id="search_box" name="search_box" type="text" placeholder="Localizar..." class="form-control">
+  <button type="submit" class="btn btn-success form-control"><span class="glyphicon glyphicon-search"></span></button>
+</div>
+</form>
+
+<div class="page-header">
+<h2><i class="fa fa-users"></i> Lista de Clientes</h2>
+</div>
+
+{% if customer_list %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Foto</th>
+      <th>e-mail</th>
+      <th>Telefone</th>
+      <th>Empresa</th>
+      <!-- <th>Tipo de cliente</th> -->
+    </tr>
+  </thead>
+  <tbody>
+  {% for customer in customer_list %}
+    <tr>
+      <td><a href="{{ customer.get_absolute_url }}">{{ customer.full_name }}</a></td>
+      <td><img src="{{ customer.photo|default:'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png' }}" class="img-square" style="height: 20px;" /></td>
+      <td>{{ customer.email|default:"---" }}</td>
+      <td>{{ customer.phone1|default:"---" }}</td>
+      <td>{{ customer.company|default:"---" }}</td>
+      <!-- <td><i class="fa fa-circle fa-fw { customer.get_customer_type_display }}"></i> { customer.get_customer_type_display }}</td> -->
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+  <p class="alert alert-warning">Sem itens na lista.</p>
+{% endif %}
+
+<hr>
+<div>
+<h3><b>Total:</b> {{ customer_list|length }} cliente{{ customer_list|length|pluralize }}</h3>
+</div>
+
+<!-- pagination -->
+{% include "includes/pagination.html" %}
+
+{% endblock content %}

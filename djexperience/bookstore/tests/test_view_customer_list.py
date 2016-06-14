@@ -8,8 +8,8 @@ class CustomerListTest(TestCase):
 
     def setUp(self):
         self.obj = Customer.objects.create(
-            first_name='Adam',
-            last_name='Smith',
+            first_name='Ad4m',
+            last_name='Sm1th',
             email='adam@example.com',
             birthday=timezone.now()
         )
@@ -23,7 +23,7 @@ class CustomerListTest(TestCase):
 
     def test_html(self):
         contents = [
-            (1, 'Adam Smith'),
+            (1, 'Ad4m Sm1th'),
             (1, 'adam@example.com'),
         ]
 
@@ -33,7 +33,7 @@ class CustomerListTest(TestCase):
 
     def test_full_name(self):
         ''' Must have full name '''
-        expected = ' '.join(filter(None, ['Adam', 'Smith']))
+        expected = ' '.join(filter(None, ['Ad4m', 'Sm1th']))
         self.assertEqual(expected, self.obj.full_name)
 
 
