@@ -186,10 +186,11 @@
         <a class="toc item">
           <i class="sidebar icon"></i>
         </a>
-        <a class="active item">Home</a>
-        <a class="item">Work</a>
-        <a class="item">Company</a>
-        <a class="item">Careers</a>
+        <a href="{% url 'core:home' %}" class="active item">Home</a>
+        <a href="{% url 'bookstore:bookstore_index' %}" class="item">Livraria</a>
+        <a href="{% url 'crm:crm_index' %}" class="item">CRM</a>
+        <!-- <a class="item">Produtos</a> -->
+        <!-- <a class="item">Vendas</a> -->
         <div class="right item">
           <a class="ui inverted button">Log in</a>
           <a class="ui inverted button">Sign Up</a>
