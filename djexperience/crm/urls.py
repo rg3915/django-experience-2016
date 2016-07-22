@@ -15,6 +15,7 @@ provider_patterns = [
 ]
 
 urlpatterns = [
+    url(r'^$', c.home, name='crm_index'),
     url(r'^employee/', include(employee_patterns)),
     url(r'^customer/', include(customer_patterns)),
     url(r'^provider/', include(provider_patterns)),

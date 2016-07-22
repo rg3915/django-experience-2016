@@ -4,6 +4,10 @@ from .models import Provider, Customer
 from .forms import EmployeeForm, ProviderForm
 
 
+def home(request):
+    return render(request, 'crm_index.html')
+
+
 def employee_create(request):
     if request.method == 'POST':
         form = EmployeeForm(request.POST)
