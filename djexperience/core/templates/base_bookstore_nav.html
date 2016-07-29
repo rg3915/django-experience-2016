@@ -1,25 +1,26 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>{% block title %}Bookstore{% endblock title %}</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>{% block title %}Bookstore{% endblock title %}</title>
 
-    <!-- Page styles -->
-    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" type='text/css'>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="{% static "css/material.min.css" %}">
-    <link rel="stylesheet" href="{% static "css/mdstyles.css" %}">
-    <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
+  <!-- Page styles -->
+  <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="{% static "css/material.min.css" %}">
+  <link rel="stylesheet" href="{% static "css/mdstyles.css" %}">
+  <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
 
   <style>
     .intro {
       padding-top: 60px;
     }
+
     #view-source {
       position: fixed;
       display: block;
@@ -31,14 +32,21 @@
     }
   </style>
 
-  </head>
-  <body>
-    {% include "includes/nav_bookstore.html" %}
-
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  {% include "includes/nav_bookstore.html" %}
+  <div class="android-content mdl-layout__content">
+    <a name="top"></a>
+{#    <div class="android-screen-section mdl-typography--text-center">#}
+{#      <a name="screens"></a>#}
+{#    </div>#}
     <div class="intro container">
       {% block content %}{% endblock content %}
     </div>
+  </div>
+</div>
 
-    <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-  </body>
+<script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+</body>
 </html>
