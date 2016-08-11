@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+  <title>Funcionários</title>
+{% endblock title %}
+
+{% block content %}
+
+<form class="navbar-form navbar-right" action="." method="get">
+<!-- add -->
+<a href="{ url 'crm:employee_add' %}">
+  <button id="new_employee" type="button" class="btn btn-primary">
+    <span class="glyphicon glyphicon-plus"></span> Adicionar
+  </button>
+</a>
+<!-- search form -->
+<div class="form-group">
+  <input id="search_box" name="search_box" type="text" placeholder="Localizar..." class="form-control">
+  <button type="submit" class="btn btn-success form-control"><span class="glyphicon glyphicon-search"></span></button>
+</div>
+</form>
+
+<div class="page-header">
+<h2><i class="fa fa-users"></i> Lista de Funcionários</h2>
+</div>
+
+{% if employee_list %}
+<table id="example" class="display" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Foto</th>
+      <th>e-mail</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for employee in employee_list %}
+    <tr>
+      <td><a href="{{ employee.get_absolute_url }}">{{ employee.full_name }}</a></td>
+      <td><img src="{{ employee.photo|default:'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png' }}" class="img-square" style="height: 20px;" /></td>
+      <td>{{ employee.email|default:"---" }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+  <p class="alert alert-warning">Sem itens na lista.</p>
+{% endif %}
+
+<hr>
+<div>
+<h3><b>Total:</b> {{ employee_list|length }} cliente{{ employee_list|length|pluralize }}</h3>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $('#example').DataTable();
+    });
+</script>
+
+{% endblock content %}

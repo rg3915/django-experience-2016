@@ -25,8 +25,14 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static "css/creative.css" %}" type="text/css">
-
+    <!-- django_tables2 css -->
     <link rel="stylesheet" href="{% static "django_tables2/themes/paleblue/css/screen.css" %}">
+    <!-- dataTables css -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,8 +53,6 @@
         
     {% endblock content %}
 
-    <!-- jQuery -->
-    <script src="{% static "js/jquery.js" %}"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{% static "js/bootstrap.min.js" %}"></script>
@@ -60,6 +64,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="{% static "js/creative.js" %}"></script>
+
+    <!-- dataTables.min.js -->
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 
     {% block js %}{% endblock js %}
 </body>

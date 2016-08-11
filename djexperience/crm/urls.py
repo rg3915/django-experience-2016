@@ -2,6 +2,7 @@ from django.conf.urls import include, url
 from djexperience.crm import views as c
 
 employee_patterns = [
+    url(r'^$', c.employee_list, name='employee_list'),
     url(r'^add/$', c.employee_create, name='employee_add'),
 ]
 
