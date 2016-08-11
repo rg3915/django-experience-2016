@@ -11,6 +11,7 @@ customer_patterns = [
 ]
 
 provider_patterns = [
+    url(r'^$', c.provider_list, name='provider_list'),
     url(r'^add/$', c.ProviderCreate.as_view(), name='provider_add'),
 ]
 

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load render_table from django_tables2 %}
+
+{% block title %}
+  <title>Fornecedores</title>
+{% endblock title %}
+
+{% block content %}
+
+<form class="navbar-form navbar-right" action="." method="get">
+<!-- add -->
+<a href="{ url 'crm:provider_add' %}">
+  <button id="new_provider" type="button" class="btn btn-primary">
+    <span class="glyphicon glyphicon-plus"></span> Adicionar
+  </button>
+</a>
+<!-- search form -->
+<div class="form-group">
+  <input id="search_box" name="search_box" type="text" placeholder="Localizar..." class="form-control">
+  <button type="submit" class="btn btn-success form-control"><span class="glyphicon glyphicon-search"></span></button>
+</div>
+</form>
+
+<div class="page-header">
+<h2><i class="fa fa-users"></i> Lista de Fornecedores</h2>
+</div>
+
+{% if provider_list %}
+  {% render_table provider_list %}
+{% else %}
+  <p class="alert alert-warning">Sem itens na lista.</p>
+{% endif %}
+
+<hr>
+<div>
+<h3><b>Total:</b> {{ provider_list|length }} cliente{{ provider_list|length|pluralize }}</h3>
+</div>
+
+<!-- pagination -->
+{% include "includes/pagination.html" %}
+
+{% endblock content %}

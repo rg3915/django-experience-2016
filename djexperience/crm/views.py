@@ -33,3 +33,5 @@ customer_detail = DetailView.as_view(model=Customer)
 class ProviderCreate(CreateView):
     model = Provider
     form_class = ProviderForm
+
+provider_list = ListView.as_view(model=Provider)
