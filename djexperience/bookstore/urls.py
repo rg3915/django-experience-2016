@@ -5,6 +5,7 @@ customer_patterns = [
     url(r'^$', b.customer_list, name='customer_list'),
     url(r'^(?P<pk>\d+)/$', b.customer_detail, name='customer_detail'),
     url(r'^add/$', b.customer_form, name='customer_add'),
+    url(r'^export/(.*)', b.export_data, name="export")
 ]
 
 book_patterns = [

@@ -3,6 +3,8 @@ from django.http import HttpResponseRedirect
 from django.views.generic import CreateView, ListView, DetailView
 from django.views.generic.edit import UpdateView
 from django.shortcuts import render, get_object_or_404
+import django_excel as excel
+from django.http import HttpResponseBadRequest
 from .models import Customer, Book
 from .forms import CustomerForm, BookForm
 from .mixins import NameSearchMixin
@@ -10,6 +12,25 @@ from .mixins import NameSearchMixin
 
 def home(request):
     return render(request, 'bookstore_index.html')
+
+
+def export_data(request, atype):
+    if atype == "sheet":
+        return excel.make_response_from_a_table(
+            Customer, 'xls', file_name="sheet")
+    elif atype == "custom":
+        query_sets = Customer.objects.all()
+        column_names = ['choice_text', 'id', 'votes']
+        return excel.make_response_from_query_sets(
+            query_sets,
+            column_names,
+            'xls',
+            file_name="custom"
+        )
+    else:
+        return HttpResponseBadRequest(
+            "Bad request. please put one of these " +
+            "in your url suffix: sheet, book or custom")
 
 
 def customer_list(request):
