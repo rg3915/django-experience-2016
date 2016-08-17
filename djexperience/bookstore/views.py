@@ -20,7 +20,7 @@ def export_data(request, atype):
             Customer, 'xls', file_name="sheet")
     elif atype == "custom":
         query_sets = Customer.objects.all()
-        column_names = ['choice_text', 'id', 'votes']
+        column_names = ['first_name', 'last_name', 'email', 'birthday']
         return excel.make_response_from_query_sets(
             query_sets,
             column_names,
