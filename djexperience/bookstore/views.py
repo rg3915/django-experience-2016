@@ -1,6 +1,6 @@
 from django.db.models import Q
 from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse_lazy
+from django.core.urlresolvers import reverse_lazy as r
 from django.views.generic import CreateView, ListView, DetailView
 from django.views.generic.edit import UpdateView
 from django.shortcuts import render, get_object_or_404
@@ -104,4 +104,4 @@ author_list = ListView.as_view(model=Author)
 author_detail = DetailView.as_view(model=Author)
 
 author_create = CreateView.as_view(
-    model=Author, fields=['name'], success_url=reverse_lazy('bookstore:author_list'))
+    model=Author, fields=['name'], success_url=r('bookstore:author_list'))
