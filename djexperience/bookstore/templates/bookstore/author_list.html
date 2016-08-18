@@ -1,0 +1,44 @@
+{% extends "base_bookstore_nav.html" %}
+{% load active_tags %}
+
+{% block title %}Bookstore | Author List{% endblock title %}
+
+{% block content %}
+
+  <h2>Lista de Autores
+    <a href="{% url 'bookstore:author_add' %}">
+      <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
+        <i class="material-icons" role="presentation">add</i>
+        <span class="visuallyhidden">Add</span>
+      </button>
+    </a>
+  </h2>
+
+  {% if object_list %}
+    <div class="mdl-grid">
+      <div class="mdl-layout-spacer"></div>
+        <div class="mdl-cell mdl-cell--4-col">
+          <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+            <thead>
+              <tr>
+                <th class="mdl-data-table__cell--non-numeric">Nome</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for author in object_list %}
+                <tr>
+                  <td class="mdl-data-table__cell--non-numeric">{{ author.name }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      <div class="mdl-layout-spacer"></div>
+    </div>
+  {% else %}
+    <p class="alert alert-warning">Sem itens na lista.</p>
+  {% endif %}
+
+{% include "includes/pagination.html" %}
+
+{% endblock content %}
