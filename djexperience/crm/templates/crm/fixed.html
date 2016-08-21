@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,23 +9,39 @@
   <!-- Site Properties -->
   <title>Fixed Menu Example - Semantic</title>
 
-  <link rel="stylesheet" type="text/css" href="{% static 'css/semantic/reset.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/semantic/site.css' %}">
+  <link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/site.css">
 
-  <link rel="stylesheet" type="text/css" href="{% static 'css/semantic/container.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/semantic/grid.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/semantic/header.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/semantic/image.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/semantic/menu.css' %}">
+  <link rel="stylesheet" type="text/css" href="../dist/components/container.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/grid.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/header.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/image.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/menu.css">
 
-  <link rel="stylesheet" type="text/css" href="{% static 'css/semantic/divider.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/semantic/list.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/semantic/segment.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/semantic/dropdown.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/semantic/icon.css' %}">
-  <!-- My personal semantic CSS -->
-  <link rel="stylesheet" type="text/css" href="{% static 'css/semantic/mysemantic_lists.css' %}">
+  <link rel="stylesheet" type="text/css" href="../dist/components/divider.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/list.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/segment.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/dropdown.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/icon.css">
 
+  <style type="text/css">
+  body {
+    background-color: #FFFFFF;
+  }
+  .ui.menu .item img.logo {
+    margin-right: 1.5em;
+  }
+  .main.container {
+    margin-top: 7em;
+  }
+  .wireframe {
+    margin-top: 2em;
+  }
+  .ui.footer.segment {
+    margin: 5em 0em 0em;
+    padding: 5em 0em;
+  }
+  </style>
 
 </head>
 <body>
@@ -34,7 +49,7 @@
   <div class="ui fixed inverted menu">
     <div class="ui container">
       <a href="#" class="header item">
-        <img class="logo" src="{% static 'img/semantic/logo.png' %}">
+        <img class="logo" src="assets/images/logo.png">
         Project Name
       </a>
       <a href="#" class="item">Home</a>
@@ -63,13 +78,13 @@
     <h1 class="ui header">Semantic UI Fixed Template</h1>
     <p>This is a basic fixed menu template using fixed size containers.</p>
     <p>A text container is used for the main container, which is useful for single column layouts</p>
-    <img class="wireframe" src="{% static 'img/semantic/media-paragraph.png' %}">
-    <img class="wireframe" src="{% static 'img/semantic/paragraph.png' %}">
-    <img class="wireframe" src="{% static 'img/semantic/paragraph.png' %}">
-    <img class="wireframe" src="{% static 'img/semantic/paragraph.png' %}">
-    <img class="wireframe" src="{% static 'img/semantic/paragraph.png' %}">
-    <img class="wireframe" src="{% static 'img/semantic/paragraph.png' %}">
-    <img class="wireframe" src="{% static 'img/semantic/paragraph.png' %}">
+    <img class="wireframe" src="assets/images/wireframe/media-paragraph.png">
+    <img class="wireframe" src="assets/images/wireframe/paragraph.png">
+    <img class="wireframe" src="assets/images/wireframe/paragraph.png">
+    <img class="wireframe" src="assets/images/wireframe/paragraph.png">
+    <img class="wireframe" src="assets/images/wireframe/paragraph.png">
+    <img class="wireframe" src="assets/images/wireframe/paragraph.png">
+    <img class="wireframe" src="assets/images/wireframe/paragraph.png">
   </div>
 
   <div class="ui inverted vertical footer segment">
@@ -108,7 +123,7 @@
         </div>
       </div>
       <div class="ui inverted section divider"></div>
-      <img src="{% static 'img/semantic/logo.png' %}" class="ui centered mini image">
+      <img src="assets/images/logo.png" class="ui centered mini image">
       <div class="ui horizontal inverted small divided link list">
         <a class="item" href="#">Site Map</a>
         <a class="item" href="#">Contact Us</a>
