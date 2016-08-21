@@ -24,7 +24,7 @@
         {% for item in object_list %}
           <tr>
             <td>{{ item.full_name }}</td>
-            <td><img src="{{ item.photo|default:'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png' }}" class="img-square" style="height: 20px;" /></td>
+            <td><img src="{{ item.photo|default:'http://lorempixel.com/100/100/people/' }}" class="img-square" style="height: 30px;" /></td>
             <td>{{ item.email|default:'---' }}</td>
             <td>{{ item.get_customer_type_display|default:'---' }}</td>
           </tr>
