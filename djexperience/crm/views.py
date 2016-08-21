@@ -1,13 +1,11 @@
 from django.shortcuts import render
 from django.views.generic import CreateView, ListView, DetailView
-from .models import Person, Employee, Provider, Customer, Seller
+from .models import Employee, Provider, Customer, Seller
 from .forms import EmployeeForm, ProviderForm
 
 
 def home(request):
     return render(request, 'crm_index.html')
-
-person_list = ListView.as_view(model=Person)
 
 
 employee_list = ListView.as_view(model=Employee)

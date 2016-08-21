@@ -1,10 +1,6 @@
 from django.conf.urls import include, url
 from djexperience.crm import views as c
 
-person_patterns = [
-    url(r'^$', c.person_list, name='person_list'),
-]
-
 employee_patterns = [
     url(r'^$', c.employee_list, name='employee_list'),
     url(r'^add/$', c.employee_create, name='employee_add'),
@@ -26,7 +22,6 @@ seller_patterns = [
 
 urlpatterns = [
     url(r'^$', c.home, name='crm_index'),
-    url(r'^person/', include(person_patterns)),
     url(r'^employee/', include(employee_patterns)),
     url(r'^customer/', include(customer_patterns)),
     url(r'^provider/', include(provider_patterns)),

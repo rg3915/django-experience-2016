@@ -36,7 +36,7 @@
 {% block menu %}
   <div class="ui fixed inverted menu">
     <div class="ui container">
-      <a href="#" class="header item">
+      <a href="{% url 'core:home' %}" class="header item">
         <img class="logo" src="{% static 'img/semantic/logo.png' %}">
         Django Experience
       </a>
@@ -44,7 +44,6 @@
       <div class="ui simple dropdown item">
         Listas <i class="dropdown icon"></i>
         <div class="menu">
-          <a class="item" href="{% url 'crm:person_list' %}">Pessoas</a>
           <a class="item" href="{% url 'crm:customer_list' %}">Clientes</a>
           <a class="item" href="{% url 'crm:provider_list' %}">Fornecedores</a>
           <a class="item" href="{% url 'crm:seller_list' %}">Vendedores</a>
