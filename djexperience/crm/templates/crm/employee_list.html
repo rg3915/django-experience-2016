@@ -1,63 +1,59 @@
-{% extends "base.html" %}
-
+{% extends "base_crm_list.html" %}
 {% load static %}
 
 {% block title %}
-  <title>Funcionários</title>
+  <title>CRM|Employee</title>
 {% endblock title %}
 
 {% block content %}
 
-<form class="navbar-form navbar-right" action="." method="get">
-<!-- add -->
-<a href="{ url 'crm:employee_add' %}">
-  <button id="new_employee" type="button" class="btn btn-primary">
-    <span class="glyphicon glyphicon-plus"></span> Adicionar
-  </button>
-</a>
-<!-- search form -->
-<div class="form-group">
-  <input id="search_box" name="search_box" type="text" placeholder="Localizar..." class="form-control">
-  <button type="submit" class="btn btn-success form-control"><span class="glyphicon glyphicon-search"></span></button>
-</div>
-</form>
+  <div class="ui main text container">
+    <h1 class="ui header">Funcionários</h1>
+    <p>Gerencie seus funcionários.</p>
 
-<div class="page-header">
-<h2><i class="fa fa-users"></i> Lista de Funcionários</h2>
-</div>
+    <table class="ui celled table">
+      <thead>
+        <tr><th>Header</th>
+        <th>Header</th>
+        <th>Header</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="ui ribbon label">First</div>
+          </td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr><th colspan="3">
+          <div class="ui right floated pagination menu">
+            <a class="icon item">
+              <i class="left chevron icon"></i>
+            </a>
+            <a class="item">1</a>
+            <a class="item">2</a>
+            <a class="item">3</a>
+            <a class="item">4</a>
+            <a class="icon item">
+              <i class="right chevron icon"></i>
+            </a>
+          </div>
+        </th>
+      </tr></tfoot>
+    </table>
 
-{% if employee_list %}
-<table id="example" class="display" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Foto</th>
-      <th>e-mail</th>
-    </tr>
-  </thead>
-  <tbody>
-  {% for employee in employee_list %}
-    <tr>
-      <td><a href="{{ employee.get_absolute_url }}">{{ employee.full_name }}</a></td>
-      <td><img src="{{ employee.photo|default:'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png' }}" class="img-square" style="height: 20px;" /></td>
-      <td>{{ employee.email|default:"---" }}</td>
-    </tr>
-  {% endfor %}
-  </tbody>
-</table>
-{% else %}
-  <p class="alert alert-warning">Sem itens na lista.</p>
-{% endif %}
-
-<hr>
-<div>
-<h3><b>Total:</b> {{ employee_list|length }} cliente{{ employee_list|length|pluralize }}</h3>
-</div>
-
-<script>
-    $(document).ready(function(){
-        $('#example').DataTable();
-    });
-</script>
+  </div>
 
 {% endblock content %}

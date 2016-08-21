@@ -1,43 +1,59 @@
-{% extends "base.html" %}
-
-{% load render_table from django_tables2 %}
+{% extends "base_crm_list.html" %}
+{% load static %}
 
 {% block title %}
-  <title>Fornecedores</title>
+  <title>CRM|Provider</title>
 {% endblock title %}
 
 {% block content %}
 
-<form class="navbar-form navbar-right" action="." method="get">
-<!-- add -->
-<a href="{ url 'crm:provider_add' %}">
-  <button id="new_provider" type="button" class="btn btn-primary">
-    <span class="glyphicon glyphicon-plus"></span> Adicionar
-  </button>
-</a>
-<!-- search form -->
-<div class="form-group">
-  <input id="search_box" name="search_box" type="text" placeholder="Localizar..." class="form-control">
-  <button type="submit" class="btn btn-success form-control"><span class="glyphicon glyphicon-search"></span></button>
-</div>
-</form>
+  <div class="ui main text container">
+    <h1 class="ui header">Fornecedores</h1>
+    <p>Gerencie seus fornecedores.</p>
 
-<div class="page-header">
-<h2><i class="fa fa-users"></i> Lista de Fornecedores</h2>
-</div>
+    <table class="ui celled table">
+      <thead>
+        <tr><th>Header</th>
+        <th>Header</th>
+        <th>Header</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="ui ribbon label">First</div>
+          </td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr><th colspan="3">
+          <div class="ui right floated pagination menu">
+            <a class="icon item">
+              <i class="left chevron icon"></i>
+            </a>
+            <a class="item">1</a>
+            <a class="item">2</a>
+            <a class="item">3</a>
+            <a class="item">4</a>
+            <a class="icon item">
+              <i class="right chevron icon"></i>
+            </a>
+          </div>
+        </th>
+      </tr></tfoot>
+    </table>
 
-{% if provider_list %}
-  {% render_table provider_list %}
-{% else %}
-  <p class="alert alert-warning">Sem itens na lista.</p>
-{% endif %}
-
-<hr>
-<div>
-<h3><b>Total:</b> {{ provider_list|length }} cliente{{ provider_list|length|pluralize }}</h3>
-</div>
-
-<!-- pagination -->
-{% include "includes/pagination.html" %}
+  </div>
 
 {% endblock content %}
