@@ -13,7 +13,7 @@ class CustomerForm(forms.ModelForm):
                   'slug', 'photo', 'birthday', 'occupation', 'company',
                   'department', 'cpf', 'rg', 'cnpj', 'ie',
                   'address', 'complement', 'district', 'city', 'uf', 'cep',
-                  'active', 'blocked']
+                  'customer_type', 'active', 'blocked']
 
     def clean_cpf(self):
         return self.cleaned_data['cpf'] or None
