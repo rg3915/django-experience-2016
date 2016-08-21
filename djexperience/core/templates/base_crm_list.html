@@ -44,10 +44,10 @@
       <div class="ui simple dropdown item">
         Listas <i class="dropdown icon"></i>
         <div class="menu">
-          <a class="item" href="#">Pessoas</a>
+          <a class="item" href="{% url 'crm:person_list' %}">Pessoas</a>
           <a class="item" href="{% url 'crm:customer_list' %}">Clientes</a>
           <a class="item" href="{% url 'crm:provider_list' %}">Fornecedores</a>
-          <a class="item" href="#">Vendedores</a>
+          <a class="item" href="{% url 'crm:seller_list' %}">Vendedores</a>
           <a class="item" href="{% url 'crm:employee_list' %}">Funcionários</a>
         </div>
       </div>
