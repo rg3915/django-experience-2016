@@ -13,31 +13,25 @@
 
     <table class="ui celled table">
       <thead>
-        <tr><th>Header</th>
-        <th>Header</th>
-        <th>Header</th>
-      </tr></thead>
+        <tr>
+          <th>Nome</th>
+          <th>Foto</th>
+          <th>E-mail</th>
+          <th>Tipo de Cliente</th>
+        </tr>
+      </thead>
       <tbody>
-        <tr>
-          <td>
-            <div class="ui ribbon label">First</div>
-          </td>
-          <td>Cell</td>
-          <td>Cell</td>
-        </tr>
-        <tr>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-        </tr>
-        <tr>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-        </tr>
+        {% for item in object_list %}
+          <tr>
+            <td>{{ item.full_name }}</td>
+            <td><img src="{{ item.photo|default:'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png' }}" class="img-square" style="height: 20px;" /></td>
+            <td>{{ item.email|default:'---' }}</td>
+            <td>{{ item.get_customer_type_display|default:'---' }}</td>
+          </tr>
+        {% endfor %}
       </tbody>
       <tfoot>
-        <tr><th colspan="3">
+        <tr><th colspan="4">
           <div class="ui right floated pagination menu">
             <a class="icon item">
               <i class="left chevron icon"></i>
