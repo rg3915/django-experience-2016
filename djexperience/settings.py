@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'djexperience.bookstore',
     'djexperience.crm',
     'djexperience.product',
+    'djexperience.selling',
 ]
 
 FILE_UPLOAD_HANDLERS = ("django_excel.ExcelMemoryFileUploadHandler",
