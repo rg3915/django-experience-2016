@@ -1,2 +1,3 @@
 djexperience/core/static/* linguist-vendored
 dev/* linguist-vendored
+djexperience/core/templates/* linguist-vendored
