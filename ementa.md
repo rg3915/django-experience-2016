@@ -51,6 +51,7 @@ O objetivo inicial é cumprir esta ementa:
 
 ## Extensões e pacotes externos
 
+- [x] [JSON e DataTable](dev/#json-e-datatable)
 - [ ] Django Rest Framework
 - [ ] Selenium
 - [ ] Gráficos

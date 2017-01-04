@@ -93,8 +93,12 @@ make mer n="02"
 
 ## Comandos personalizados
 
+## JSON e DataTable
+
+[Leia mais][4]
 
 [0]: https://github.com/rg3915/django-experience/blob/master/dev/tables_django.md
 [1]: https://docs.djangoproject.com/en/1.9/topics/db/models/#abstract-base-classes
 [2]: https://docs.djangoproject.com/en/1.9/topics/db/models/#multi-table-inheritance
 [3]: https://docs.djangoproject.com/en/1.9/topics/db/models/#proxy-models
+[4]: http://codeshard.github.io/datatables-and-django-finally-with-ajax.html
