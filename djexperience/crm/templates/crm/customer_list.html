@@ -11,42 +11,46 @@
     <h1 class="ui header">Clientes</h1>
     <p>Gerencie seus clientes.</p>
 
-    <table class="ui celled table">
-      <thead>
+{% if object_list %}
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Foto</th>
+        <th>E-mail</th>
+        <th>Tipo de Cliente</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in object_list %}
         <tr>
-          <th>Nome</th>
-          <th>Foto</th>
-          <th>E-mail</th>
-          <th>Tipo de Cliente</th>
+          <td>{{ item.full_name }}</td>
+          <td><img src="{{ item.photo|default:'http://lorempixel.com/100/100/people/' }}" class="img-square" style="height: 30px;" /></td>
+          <td>{{ item.email|default:'---' }}</td>
+          <td>{{ item.get_customer_type_display|default:'---' }}</td>
         </tr>
-      </thead>
-      <tbody>
-        {% for item in object_list %}
-          <tr>
-            <td>{{ item.full_name }}</td>
-            <td><img src="{{ item.photo|default:'http://lorempixel.com/100/100/people/' }}" class="img-square" style="height: 30px;" /></td>
-            <td>{{ item.email|default:'---' }}</td>
-            <td>{{ item.get_customer_type_display|default:'---' }}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-      <tfoot>
-        <tr><th colspan="4">
-          <div class="ui right floated pagination menu">
-            <a class="icon item">
-              <i class="left chevron icon"></i>
-            </a>
-            <a class="item">1</a>
-            <a class="item">2</a>
-            <a class="item">3</a>
-            <a class="item">4</a>
-            <a class="icon item">
-              <i class="right chevron icon"></i>
-            </a>
-          </div>
-        </th>
-      </tr></tfoot>
-    </table>
+      {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr><th colspan="4">
+        <div class="ui right floated pagination menu">
+          <a class="icon item">
+            <i class="left chevron icon"></i>
+          </a>
+          <a class="item">1</a>
+          <a class="item">2</a>
+          <a class="item">3</a>
+          <a class="item">4</a>
+          <a class="icon item">
+            <i class="right chevron icon"></i>
+          </a>
+        </div>
+      </th>
+    </tr></tfoot>
+  </table>
+{% else %}
+  <p class="alert alert-warning">Sem itens na lista.</p>
+{% endif %}
 
   </div>
 
