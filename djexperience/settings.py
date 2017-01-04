@@ -34,8 +34,8 @@ INSTALLED_APPS = [
     'bootstrapform',
     'widget_tweaks',
     'daterange_filter',
-    'django_activeurl',
-    'import_export',
+    # 'django_activeurl',
+    # 'import_export',
     'django_tables2',
     # my apps
     'djexperience.bookstore',
@@ -44,8 +44,6 @@ INSTALLED_APPS = [
     'djexperience.selling',
 ]
 
-FILE_UPLOAD_HANDLERS = ("django_excel.ExcelMemoryFileUploadHandler",
-                        "django_excel.TemporaryExcelFileUploadHandler")
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',

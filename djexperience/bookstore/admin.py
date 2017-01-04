@@ -1,18 +1,18 @@
 from django.contrib import admin
-from import_export import resources
-from import_export.admin import ImportExportModelAdmin
+# from import_export import resources
+# from import_export.admin import ImportExportModelAdmin
 from .models import Author, Book, People, PF, PJ, Customer, Provider
 from .models import Sale, Ordered
 
 
-class CustomerResource(resources.ModelResource):
+# class CustomerResource(resources.ModelResource):
 
-    class Meta:
-        model = Customer
+    # class Meta:
+        # model = Customer
 
 
 @admin.register(Customer)
-class CustomerAdmin(ImportExportModelAdmin):
+class CustomerAdmin(admin.ModelAdmin):
     list_display = ('__str__', 'email', 'active')
     search_fields = ('first_name', 'last_name')
     list_filter = ('active',)

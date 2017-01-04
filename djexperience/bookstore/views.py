@@ -4,7 +4,6 @@ from django.core.urlresolvers import reverse_lazy as r
 from django.views.generic import CreateView, ListView, DetailView
 from django.views.generic.edit import UpdateView
 from django.shortcuts import render, get_object_or_404
-import django_excel as excel
 from django.http import HttpResponseBadRequest
 from .models import Customer, Book, Author
 from .forms import CustomerForm, BookForm
