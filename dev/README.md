@@ -95,7 +95,90 @@ make mer n="02"
 
 ## JSON e DataTable
 
-[Leia mais][4]
+Estava precisando renderizar uma tabela num template HTML a partir de um JSON. Então eu fiz o seguinte:
+
+```html
+# base_crm_list.html
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<!-- dataTables -->
+<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+```
+
+Em `crm/views.py`
+
+```python
+# views.py
+from django.http import HttpResponse
+from django.core import serializers
+
+def customer_json(request):
+    customers = Customer.objects.all()
+    json = serializers.serialize('json', customers)
+    return HttpResponse(json, content_type='application/json')
+
+
+def customer_json_render(request):
+    return render(request, 'crm/customer_json.html')
+```
+
+Em `crm/urls.py`
+
+```python
+# urls.py
+url(r'^json/$', c.customer_json, name='customer_json'),
+url(r'^render/$', c.customer_json_render, name='customer_json_render'),
+```
+
+Em `crm/templates/crm/customer_json.html`
+
+```html
+# customer_json.html
+{% extends "base_crm_list.html" %}
+{% load static %}
+
+{% block title %}
+  <title>CRM|Customer</title>
+{% endblock title %}
+
+{% block content %}
+
+<div class="ui main text container">
+    <h1 class="ui header">Clientes</h1>
+    <p>Gerencie seus clientes.</p>
+
+  <table class="ui celled table" id="example">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>E-mail</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<script type="text/javascript" class="init">
+  $(document).ready(function() {
+    $('#example').dataTable( {
+      "processing": true,
+      "ajax": {
+        "processing": true,
+        "url": "{% url 'crm:customer_json' %}",
+        "dataSrc": ""
+      },
+      "columns": [
+        { "data": "fields.first_name" },
+        { "data": "fields.email" },
+      ]
+    });
+  });
+</script>
+
+{% endblock content %}
+```
+
+[Referência][4]
 
 [0]: https://github.com/rg3915/django-experience/blob/master/dev/tables_django.md
 [1]: https://docs.djangoproject.com/en/1.9/topics/db/models/#abstract-base-classes

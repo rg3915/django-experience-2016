@@ -1,0 +1,42 @@
+{% extends "base_crm_list.html" %}
+{% load static %}
+
+{% block title %}
+  <title>CRM|Customer</title>
+{% endblock title %}
+
+{% block content %}
+
+<div class="ui main text container">
+    <h1 class="ui header">Clientes</h1>
+    <p>Gerencie seus clientes.</p>
+
+  <table class="ui celled table" id="example">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>E-mail</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<script type="text/javascript" class="init">
+  $(document).ready(function() {
+    $('#example').dataTable( {
+      "processing": true,
+      "ajax": {
+        "processing": true,
+        "url": "{% url 'crm:customer_json' %}",
+        "dataSrc": ""
+      },
+      "columns": [
+        { "data": "fields.first_name" },
+        { "data": "fields.email" },
+      ]
+    });
+  });
+</script>
+
+{% endblock content %}
