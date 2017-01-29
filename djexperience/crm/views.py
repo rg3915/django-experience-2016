@@ -1,3 +1,4 @@
+import json
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.core import serializers
@@ -39,6 +40,14 @@ def customer_json(request):
     customers = Customer.objects.all()
     json = serializers.serialize('json', customers)
     return HttpResponse(json, content_type='application/json')
+
+
+def customer_list_by_json(request):
+    customers = Customer.objects.all()
+    data_as_json = serializers.serialize('json', customers)
+    data_as_dict = json.loads(data_as_json)
+    data_as_dict = {'mydict': data_as_dict}
+    return render(request, 'crm/customer_json2.html', context=data_as_dict)
 
 
 def customer_json_render(request):

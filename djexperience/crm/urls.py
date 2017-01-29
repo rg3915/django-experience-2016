@@ -9,6 +9,7 @@ employee_patterns = [
 customer_patterns = [
     url(r'^$', c.CustomerList.as_view(), name='customer_list'),
     url(r'^json/$', c.customer_json, name='customer_json'),
+    url(r'^json2/$', c.customer_list_by_json, name='customer_json2'),
     url(r'^render/$', c.customer_json_render, name='customer_json_render'),
     url(r'^(?P<slug>[\w-]+)/$', c.customer_detail, name='customer_detail'),
 ]
