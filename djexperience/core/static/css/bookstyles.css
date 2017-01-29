@@ -62,3 +62,13 @@
 .demo-footer .mdl-mini-footer--link-list a {
   font-size: 13px;
 }
+
+.float-button-r {
+  position: relative;
+}
+
+.float-button-a {
+  position: absolute;
+  top: -27px;
+  right: 17px;
+}
