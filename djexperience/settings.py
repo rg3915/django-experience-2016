@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'bootstrapform',
     'widget_tweaks',
     'daterange_filter',
-    # 'django_activeurl',
+    'django_activeurl',
     # 'import_export',
     'django_tables2',
     # my apps
