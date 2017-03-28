@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://www.djangoproject.com/favicon.ico">
+
+    <title>{% block title %}Django{% endblock title %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Font Awesome core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Bootstrap core JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+      /* Move down content because we have a fixed navbar that is 60px tall */
+      body {
+        padding-top: 55px;
+      }
+    </style>
+
+</head>
+<body>
+
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Empresa</th>
+          <th>Tipo</th>
+          <th>Contato</th>
+          <th>E-mail</th>
+          <th>Telefone</th>
+          <th>Status</th>
+          <th>Completo</th>
+          <th>Proposta</th>
+          <th>Preço</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for company in companies %}
+          <tr>
+            <td>{{ company.name }}</td>
+            <td>{{ company.companytipe }}</td>
+            <td>{{ company.contact_company__name }}</td>
+            <td>{{ company.contact_company__email }}</td>
+            <td>{{ company.contact_company__phone }}</td>
+            <td>{{ company.status_company__status }}</td>
+            <td>{{ company.status_company__is_completed }}</td>
+            <td>{{ company.proposal_company__code }}</td>
+            <td>{{ company.proposal_company__price }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
