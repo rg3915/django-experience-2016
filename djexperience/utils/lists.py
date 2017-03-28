@@ -55,3 +55,9 @@ CUSTOMER_TYPE = (
     ('a', 'arquitetura'),
     ('p', 'particular')
 )
+
+COMPANY_TYPE = (
+    ('c', 'comércio'),
+    ('i', 'indústria'),
+    ('a', 'agronomia'),
+)

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django_tables2',
     # my apps
     'djexperience.bookstore',
+    'djexperience.company',
     'djexperience.crm',
     'djexperience.product',
     'djexperience.selling',
