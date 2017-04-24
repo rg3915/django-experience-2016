@@ -180,8 +180,73 @@ Em `crm/templates/crm/customer_json.html`
 
 [Referência][4]
 
+## Exportar para Excel
+
+```
+pip install xlwt
+```
+
+```python
+# views.py
+def export_users_xls(request):
+    response = HttpResponse(content_type='application/ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="customers.xls"'
+
+    wb = xlwt.Workbook(encoding='utf-8')
+    ws = wb.add_sheet('Customers')
+
+    # Sheet header, first row
+    row_num = 0
+
+    font_style = xlwt.XFStyle()
+    font_style.font.bold = True
+
+    columns = ['Nome', 'Sobrenome', 'E-mail', 'Nascimento', 'Criado em']
+
+    for col_num in range(len(columns)):
+        ws.write(row_num, col_num, columns[col_num], font_style)
+
+    # Sheet body, remaining rows
+    default_style = xlwt.XFStyle()
+
+    rows = Customer.objects.all().values_list('first_name',
+                                              'last_name',
+                                              'email',
+                                              'birthday',
+                                              'created')
+    for row, rowdata in enumerate(rows):
+        row_num += 1
+        for col, val in enumerate(rowdata):
+            if isinstance(val, datetime):
+                val = val.strftime('%d/%m/%Y %H:%M')
+            elif isinstance(val, date):
+                val = val.strftime('%d/%m/%Y')
+            ws.write(row_num, col, val, default_style)
+
+    wb.save(response)
+    return response
+```
+
+```python
+# urls.py
+from djexperience.crm import views as c
+
+customer_patterns = [
+    # ...
+        url(r'^export/xls/$', c.export_users_xls, name='export_users_xls'),
+]
+```
+
+```html
+# customer_list.html
+<a href="{% url 'crm:export_users_xls' %}">Exportar Excel</a>
+```
+
+[Referência][5]
+
 [0]: https://github.com/rg3915/django-experience/blob/master/dev/tables_django.md
 [1]: https://docs.djangoproject.com/en/1.9/topics/db/models/#abstract-base-classes
 [2]: https://docs.djangoproject.com/en/1.9/topics/db/models/#multi-table-inheritance
 [3]: https://docs.djangoproject.com/en/1.9/topics/db/models/#proxy-models
 [4]: http://codeshard.github.io/datatables-and-django-finally-with-ajax.html
+[5]: https://simpleisbetterthancomplex.com/tutorial/2016/07/29/how-to-export-to-excel.html

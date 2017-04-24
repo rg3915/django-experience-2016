@@ -12,6 +12,7 @@ customer_patterns = [
     url(r'^json2/$', c.customer_list_by_json, name='customer_json2'),
     url(r'^render/$', c.customer_json_render, name='customer_json_render'),
     url(r'^(?P<slug>[\w-]+)/$', c.customer_detail, name='customer_detail'),
+    url(r'^export/xls/$', c.export_users_xls, name='export_users_xls'),
 ]
 
 provider_patterns = [

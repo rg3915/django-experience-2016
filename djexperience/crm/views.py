@@ -1,4 +1,6 @@
 import json
+import xlwt
+from datetime import date, datetime
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.core import serializers
@@ -52,6 +54,45 @@ def customer_list_by_json(request):
 
 def customer_json_render(request):
     return render(request, 'crm/customer_json.html')
+
+
+def export_users_xls(request):
+    response = HttpResponse(content_type='application/ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="customers.xls"'
+
+    wb = xlwt.Workbook(encoding='utf-8')
+    ws = wb.add_sheet('Customers')
+
+    # Sheet header, first row
+    row_num = 0
+
+    font_style = xlwt.XFStyle()
+    font_style.font.bold = True
+
+    columns = ['Nome', 'Sobrenome', 'E-mail', 'Nascimento', 'Criado em']
+
+    for col_num in range(len(columns)):
+        ws.write(row_num, col_num, columns[col_num], font_style)
+
+    # Sheet body, remaining rows
+    default_style = xlwt.XFStyle()
+
+    rows = Customer.objects.all().values_list('first_name',
+                                              'last_name',
+                                              'email',
+                                              'birthday',
+                                              'created')
+    for row, rowdata in enumerate(rows):
+        row_num += 1
+        for col, val in enumerate(rowdata):
+            if isinstance(val, datetime):
+                val = val.strftime('%d/%m/%Y %H:%M')
+            elif isinstance(val, date):
+                val = val.strftime('%d/%m/%Y')
+            ws.write(row_num, col, val, default_style)
+
+    wb.save(response)
+    return response
 
 
 class ProviderCreate(CreateView):

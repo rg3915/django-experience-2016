@@ -13,3 +13,4 @@ requests==2.10.0
 six==1.10.0
 static3==0.6.1
 pytz==2016.4
+xlwt==1.2.0

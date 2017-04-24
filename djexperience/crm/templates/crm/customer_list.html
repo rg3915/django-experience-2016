@@ -9,7 +9,7 @@
 
   <div class="ui main text container">
     <h1 class="ui header">Clientes</h1>
-    <p>Gerencie seus clientes.</p>
+    <p>Gerencie seus clientes. - <a href="{% url 'crm:export_users_xls' %}">Exportar Excel</a></p>
 
 {% if object_list %}
   <table class="ui celled table">

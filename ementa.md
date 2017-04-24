@@ -52,6 +52,7 @@ O objetivo inicial é cumprir esta ementa:
 ## Extensões e pacotes externos
 
 - [x] [JSON e DataTable](dev/#json-e-datatable)
+- [x] [Exportar para Excel](dev/#exportar-para-excel)
 - [ ] Django Rest Framework
 - [ ] Selenium
 - [ ] Gráficos
