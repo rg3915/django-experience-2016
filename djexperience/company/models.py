@@ -4,7 +4,7 @@ from djexperience.utils.lists import COMPANY_TYPE
 
 class Company(models.Model):
     name = models.CharField(max_length=50)
-    companytipe = models.CharField(max_length=1, choices=COMPANY_TYPE)
+    companytype = models.CharField(max_length=1, choices=COMPANY_TYPE)
 
     class Meta:
         ordering = ['name']

@@ -4,7 +4,7 @@ from .models import Company, Contact, Status, Proposal
 
 @admin.register(Company)
 class CompanyAdmin(admin.ModelAdmin):
-    list_display = ('name', 'companytipe')
+    list_display = ('name', 'companytype')
 
 
 @admin.register(Contact)
