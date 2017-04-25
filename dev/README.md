@@ -244,9 +244,109 @@ customer_patterns = [
 
 [Referência][5]
 
+## Exportar para Excel com django-import-export
+
+```
+pip install django-import-export==0.4.5
+```
+
+```python
+# settings.py
+INSTALLED_APPS = [
+    # thirty apps
+    # ...
+    'import_export'
+    # ...
+]
+```
+
+```python
+# admin.py
+from django.contrib import admin
+from import_export import resources, fields
+from import_export.admin import ImportExportModelAdmin
+from .models import Contact
+
+
+CONTACTFIELDS = ('treatment', 'name', 'birthday', 'created')
+
+
+class ContactResource(resources.ModelResource):
+    age = fields.Field()
+
+    class Meta:
+        model = Contact
+        fields = CONTACTFIELDS
+        export_order = CONTACTFIELDS
+        widgets = {
+            'next_contact': {'format': '%d/%m/%Y'},
+            'created': {'format': '%d/%m/%Y %H:%M'},
+        }
+
+    def dehydrate_age(self, obj):
+        return obj.get_age()
+
+
+@admin.register(Contact)
+class ContactAdmin(ImportExportModelAdmin):
+    resource_class = ContactResource
+    list_display = ('name', 'company', 'email', 'phone')
+```
+
+[django-import-export.readthedocs.io][6]
+
+## Exportar para Excel com django-import-export por um Template
+
+```python
+# exports.py
+''' Exporta planilhas em Excel '''
+from datetime import datetime
+from django.http import HttpResponse
+from import_export.admin import ExportMixin
+from import_export.formats.base_formats import XLSX
+
+from djexperience.company.models import Contact
+from djexperience.company.admin import ContactResource
+
+
+MDATA = datetime.now().strftime('%Y-%m-%d')
+
+
+def _export_data(queryset, model, filename_prefix, resource_class):
+    e = ExportMixin()
+    e.resource_class = resource_class
+    e.model = model
+    data = e.get_export_data(XLSX(), queryset)
+    response = HttpResponse(
+        data, content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response[
+        'Content-Disposition'] = 'attachment; filename="{0}-{1}.xlsx"'.format(filename_prefix, MDATA)
+    return response
+
+
+def export_data_contact(request):
+    queryset = Contact.objects.all()
+    model = Contact
+    filename_prefix = 'contatos'
+    resource_class = ContactResource
+    return _export_data(queryset, model, filename_prefix, resource_class)
+```
+
+```python
+# urls.py
+url(r'^export/$', exp.export_data_contact, name='export_data_contact'),
+```
+
+```html
+# template.html
+<a href="{% url 'company:export_data_contact' %}">Exportar Excel</a>
+```
+
+
 [0]: https://github.com/rg3915/django-experience/blob/master/dev/tables_django.md
 [1]: https://docs.djangoproject.com/en/1.9/topics/db/models/#abstract-base-classes
 [2]: https://docs.djangoproject.com/en/1.9/topics/db/models/#multi-table-inheritance
 [3]: https://docs.djangoproject.com/en/1.9/topics/db/models/#proxy-models
 [4]: http://codeshard.github.io/datatables-and-django-finally-with-ajax.html
 [5]: https://simpleisbetterthancomplex.com/tutorial/2016/07/29/how-to-export-to-excel.html
+[6]: https://django-import-export.readthedocs.io/en/latest/
