@@ -180,7 +180,7 @@ Em `crm/templates/crm/customer_json.html`
 
 [Referência][4]
 
-## Exportar para Excel
+## Exportar para Excel com xlwt
 
 ```
 pip install xlwt
@@ -238,7 +238,7 @@ customer_patterns = [
 ```
 
 ```html
-# customer_list.html
+<!-- customer_list.html -->
 <a href="{% url 'crm:export_users_xls' %}">Exportar Excel</a>
 ```
 
@@ -338,7 +338,7 @@ url(r'^export/$', exp.export_data_contact, name='export_data_contact'),
 ```
 
 ```html
-# template.html
+<!-- template.html -->
 <a href="{% url 'company:export_data_contact' %}">Exportar Excel</a>
 ```
 

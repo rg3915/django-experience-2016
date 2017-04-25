@@ -52,7 +52,7 @@ O objetivo inicial é cumprir esta ementa:
 ## Extensões e pacotes externos
 
 - [x] [JSON e DataTable](dev/#json-e-datatable)
-- [x] [Exportar para Excel](dev/#exportar-para-excel)
+- [x] [Exportar para Excel com xlwt](dev/#exportar-para-excel-com-xlwt)
 - [x] [Exportar para Excel com django-import-export](dev/#exportar-para-excel-com-django-import-export)
 - [ ] Django Rest Framework
 - [ ] Selenium
