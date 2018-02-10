@@ -41,9 +41,10 @@ INSTALLED_APPS = [
     'djexperience.bookstore',
     'djexperience.company',
     'djexperience.crm',
+    'djexperience.myemail',
     'djexperience.product',
     'djexperience.selling',
-    'djexperience.myemail',
+    'djexperience.service',
 ]
 
 
