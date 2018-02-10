@@ -40,7 +40,7 @@ source .venv/bin/activate
 PS1="(`basename \"$VIRTUAL_ENV\"`):/\W$ " # opcional (insere nome do virtualenv no terminal)
 python -m pip install -r requirements/dev.txt
 python contrib/env_gen.py
-python manage.py makemigrations bookstore crm product
+python manage.py makemigrations bookstore company crm myemail product selling service
 python manage.py migrate
 python manage.py test
 ```
