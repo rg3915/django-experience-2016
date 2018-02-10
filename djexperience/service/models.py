@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import resolve_url as r
 from djexperience.core.models import TimeStampedModel
 
 

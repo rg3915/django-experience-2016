@@ -1,0 +1,27 @@
+{% extends "base_bootstrap.html" %}
+
+{% block content %}
+  <a href="{% url 'service:protest_add' %}" class="btb btn-sm btn-success">Fazer reclamação</a>
+  {% if object_list %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Reclamação</th>
+          <th>Serviço</th>
+          <th>Tipo de Serviço</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for object in object_list %}
+          <tr>
+            <td>{{ object }}</td>
+            <td>{{ object.typeservice.service }}</td>
+            <td>{{ object.typeservice }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p class="text-center alert alert-warning">Sem itens na lista. <a href="{% url 'service:protest_add' %}">Cadastrar</a></p>
+  {% endif %}
+{% endblock content %}

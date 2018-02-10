@@ -15,7 +15,6 @@ class ProtestForm(forms.ModelForm):
         fields = (
             'service',
             'typeservice',
-            'councilman',
             'description',
         )
 

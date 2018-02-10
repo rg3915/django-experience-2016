@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}Django Experience{% endblock title %}</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" type="text/css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+
+    <!-- dataTables css -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    {% block css %}{% endblock css %}
+
+    <style>
+      #page-top {
+        padding-top: 10px;
+      }
+    </style>
+
+</head>
+
+<body id="page-top">
+
+    <div class="container">
+      {% block content %}{% endblock content %}
+    </div>
+
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static "js/jquery.easing.min.js" %}"></script>
+    <script src="{% static "js/jquery.fittext.js" %}"></script>
+    <script src="{% static "js/wow.min.js" %}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static "js/creative.js" %}"></script>
+
+    <!-- dataTables.min.js -->
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+    {% block js %}{% endblock js %}
+</body>
+
+</html>
