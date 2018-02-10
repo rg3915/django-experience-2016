@@ -3,7 +3,11 @@
 
 {% block content %}
 
-  <form class="form-horizontal col-sm-6" method="POST" action=".">
+  <form id="protestForm" 
+        class="form-horizontal col-sm-6" 
+        method="POST" 
+        action="." 
+        data-url="{% url 'service:ajax_load_typeservices' %}">
     <legend>Fazer reclamação</legend>
     {% csrf_token %}
     {{ form|bootstrap_horizontal }}
@@ -13,5 +17,22 @@
       </div>
     </div>
   </form>
+
+<script>
+  $('#id_service').change(function() {
+    let url = $('#protestForm').data('url')
+    let serviceId = $(this).val()
+
+    $.ajax({
+      url: url,
+      data: {
+        'service': serviceId
+      },
+      success: function(data) {
+        $('#id_typeservice').html(data);
+      },
+    });
+  });
+</script>
 
 {% endblock content %}

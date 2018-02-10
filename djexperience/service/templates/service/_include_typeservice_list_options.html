@@ -1,0 +1,4 @@
+<option value="">---------</option>
+{% for typeservice in typeservices %}
+  <option value="{{ typeservice.pk }}">{{ typeservice.title }}</option>
+{% endfor %}

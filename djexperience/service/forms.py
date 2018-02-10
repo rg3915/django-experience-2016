@@ -1,10 +1,10 @@
 from django import forms
-from .models import Protest, Service
+from .models import Protest, Service, TypeService
 
 
 class ProtestForm(forms.ModelForm):
     service = forms.ModelChoiceField(
-        queryset=None,
+        queryset=Service.objects.all(),
         label='Serviços',
         required=True,
         widget=forms.Select(attrs={'class': 'form-control'})
@@ -20,4 +20,16 @@ class ProtestForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(ProtestForm, self).__init__(*args, **kwargs)
-        self.fields['service'].queryset = Service.objects.all()
+        self.fields['typeservice'].queryset = TypeService.objects.none()
+
+        if 'service' in self.data:
+            try:
+                service_id = int(self.data.get('service'))
+                typeservice = TypeService.objects.filter(service_id=service_id)
+                typeservice = typeservice.order_by('title')
+                self.fields['typeservice'].queryset = typeservice
+            except (ValueError, TypeError):
+                pass
+        elif self.instance.pk:
+            obj = self.instance.service.typeservice_set.order_by('title')
+            self.fields['typeservice'].queryset = obj
